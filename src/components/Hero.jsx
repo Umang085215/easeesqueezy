@@ -85,7 +85,6 @@ const Hero = () => {
         className="absolute bottom-[20%] right-[10%] w-36 z-20 icon-float3"
       />
 
-      
       <Swiper
         modules={[Pagination, Autoplay]}
         autoplay={{ delay: 3000 }}
@@ -97,12 +96,10 @@ const Hero = () => {
             <div
               className={`relative w-full h-screen flex justify-center items-center overflow-hidden ${slide.bg}`}
             >
-           
               <h1 className="absolute text-[14vw] sm:text-[10vw] font-extrabold uppercase text-white opacity-90 z-0 leading-none text-center">
                 {slide.title}
               </h1>
 
-             
               <img
                 src={slide.bottle}
                 alt="Juice Bottle"
@@ -113,13 +110,11 @@ const Hero = () => {
         ))}
       </Swiper>
 
-     
       <div
         className="absolute bottom-6 left-0 w-full flex flex-col gap-6 px-4 z-30
           items-center text-center 
           md:px-10 md:flex-row md:justify-between md:items-end md:text-left"
       >
-       
         <div>
           <h3 className="text-white font-bold tracking-wide mb-3 md:mb-4">
             FLAVORS
@@ -140,10 +135,9 @@ const Hero = () => {
           </div>
         </div>
 
-      
         <div className="text-left md:text-right">
           <h2 className="font-semibold text-base md:text-xl text-white">
-            Fresh, Healthy, and Natural Juices
+            Fresh, Healthy, and Natural Juices3
           </h2>
           <h3 className="font-semibold text-base md:text-xl text-green-800">
             Delivered to Your doorstep daily.

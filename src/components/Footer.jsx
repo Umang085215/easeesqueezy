@@ -175,7 +175,8 @@ const Footer = () => {
       )}
 
       <div className="text-center text-sm text-gray-200 mt-10 border-t border-gray-600 pt-4">
-        © 2025 Easse Squeezy All Rights Reserved.
+        © 2025 Easse Squeezy All Rights Reserved. <br />
+        Design and Develop by Ecode Dash
       </div>
     </footer>
   );
