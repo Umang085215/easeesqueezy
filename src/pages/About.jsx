@@ -6,29 +6,25 @@ const About = () => {
   return (
     <>
       <section className="bg-[#FDF4B5] pb-20  relative">
-        {/* Top Left Fruit */}
         <div className="relative max-w-7xl  py-16 px-6 md:px-16 overflow-hidden mx-auto">
           <img
             src="/images/f5.png"
             alt="Fruit decoration"
             className="absolute top-6 left-6 w-16 md:w-20 transform rotate-[150deg]"
           />
-          {/* Top Right Fruit */}
+
           <img
             src="/images/f5.png"
             alt="Fruit decoration"
             className="absolute top-6 right-20 w-16 md:w-20"
           />
-
-          {/* Bottom Right Fruit */}
           <img
             src="/images/f5.png"
             alt="Fruit decoration"
-            className="absolute bottom-20 right-40 w-16 md:w-20 transform rotate-[45deg]"
+            className="absolute bottom-2 right-10 w-16 md:w-20 transform rotate-[45deg]"
           />
 
           <div className="grid md:grid-cols-2 gap-12 items-center max-w-7xl mx-auto">
-            {/* Left Image Circle */}
             <div className=" relative flex justify-center">
               <img src="/images/c3.png" alt="About Easee Squeezy" />
               <img
@@ -37,8 +33,6 @@ const About = () => {
                 className="absolute left-0 -bottom-5 sm:-bottom-10 w-36 sm:w-48"
               />
             </div>
-
-            {/* Right Content */}
             <div className="relative text-[#134B34]">
               <span className="absolute left-[10%] bg-[#C0E474] text-white text-sm px-3 py-1 rounded-md font-bold inline-block transform rotate-[20deg]">
                 STORY
@@ -94,8 +88,6 @@ const About = () => {
                 It should be a daily ritual of health, vitality, and nature’s
                 magic.
               </h4>
-
-              {/* Button */}
               <button
                 onClick={() => {
                   const inquiry = document.getElementById("inquiry");

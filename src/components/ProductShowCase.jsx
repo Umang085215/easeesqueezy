@@ -1,4 +1,4 @@
-// src/components/ProductShowcase.jsx
+
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Autoplay } from "swiper/modules";
 import "swiper/css";
@@ -54,7 +54,7 @@ const ProductShowcase = () => {
         Enjoy our take on the classic flavors you know and love.
       </p>
 
-      {/* Slider */}
+     
       <div className="relative mb-10 mt-10">
         <Swiper
           modules={[Navigation, Autoplay]}

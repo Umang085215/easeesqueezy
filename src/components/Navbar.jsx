@@ -4,7 +4,6 @@ const Navbar = () => {
   return (
     <>
       <section>
-        {/* Logo & Navbar */}
         <header className="absolute top-6 left-6 flex items-center gap-3">
           <img
             src="/images/logo.png"
