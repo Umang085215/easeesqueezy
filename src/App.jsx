@@ -1,10 +1,11 @@
 import React from "react";
-import Home from "./pages/Home";
+import Home from "./easeeSqueezyUser/pages/Home";
+import Routers from "./routers/Routers";
 
 const App = () => {
   return (
     <div>
-      <Home />
+      <Routers />
     </div>
   );
 };
