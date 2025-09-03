@@ -14,7 +14,7 @@ const DashboardCard = ({ title, value, ratio, img, color }) => {
         <div
           className={`flex items-center justify-center h-100 w-100 rounded-full text-white`}
         >
-          <img src={`/images/${img}`} alt="img" />
+          <img src={`/public/adminImages/${img}`} alt="img" />
         </div>
       )}
     </div>

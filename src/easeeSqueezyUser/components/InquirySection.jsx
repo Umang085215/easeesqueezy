@@ -88,10 +88,10 @@ const InquirySection = () => {
   return (
     <section
       id="inquiry"
-      className="w-full pb-20 pt-10 bg-[#FFD965] bg-[url('/images/contactbg.png')] bg-center bg-no-repeat bg-blend-multiply"
+      className=" pb-20 pt-10 bg-[#FFD965] bg-[url('/images/contactbg.png')] bg-center bg-no-repeat bg-blend-multiply"
     >
-      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 px-3 md:px-6 lg:px-8 pt-0 pb-16 sm:pt-[4rem] items-center">
-        <div className="mobileForm bg-white mb-[-200px] shadow-lg rounded-lg px-8 pt-10 pb-20 order-2 lg:order-1">
+      <div className="container mx-auto px-6 sm:px-12 grid grid-cols-1 lg:grid-cols-2 gap-10  md:px-6 lg:px-8 pt-0 pb-16 sm:pt-[4rem] items-center">
+        <div className="mobileForm bg-white mb-[-200px] shadow-lg rounded-lg px-4 sm:px-8 pt-10 pb-20 order-2 lg:order-1">
           <h2 className="text-2xl md:text-3xl font-bold text-[#134B34] mb-2">
             We Value Your Feedback
           </h2>
@@ -171,7 +171,7 @@ const InquirySection = () => {
         <div className="relative pt-0 pb-12 sm:pt-[3rem] flex flex-col justify-between h-full order-1 lg:order-2">
           <div>
             <h3 className="order_title text-4xl font-extrabold text-[#CA9D15] mb-3">
-              <i>FOR ORDER</i>
+              FOR ORDER
             </h3>
             <p className="text-gray-700 mb-6 max-w-md">
               Feel free to reach us on our WhatsApp and email address for order.
@@ -190,7 +190,7 @@ const InquirySection = () => {
             </div>
           </div>
 
-          <div className="absolute -bottom-[140px] right-[30px] lg:-bottom-[80px] lg:-right-[50px] flex items-end justify-center lg:justify-start">
+          <div className="absolute -bottom-[140px] right-[30px] lg:-bottom-[80px] lg:right-[20px] flex items-end justify-center lg:justify-start">
             <img
               src="/images/contact1.png"
               alt="Oranges"

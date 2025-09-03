@@ -23,7 +23,13 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
       {/* Sidebar Header */}
       <div className="flex items-center justify-between p-2 border-b border-gray-500 min-h-[64px]">
         {isOpen ? (
-          <span className="text-lg font-bold">EaseeSqueezy</span>
+          <span className="w-full flex items-center justify-center ">
+            <img
+              src="/adminImages/new_logo.png"
+              alt="sidebar logo"
+              className="w-36 h-12 m-0"
+            />
+          </span>
         ) : (
           <div className="w-24">
             <img

@@ -1,27 +1,24 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import * as yup from "yup";
-import axios from "axios";
 import * as Tabs from "@radix-ui/react-tabs";
-
+import { Save, X } from "lucide-react";
 const schema = yup.object().shape({
   category: yup.string().required("Category is required"),
 });
-
 const Categories = () => {
   const [category, setCategory] = useState("");
   const [errors, setErrors] = useState({});
   const [errorMsg, setErrorMsg] = useState("");
   const [successMsg, setSuccessMsg] = useState("");
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
-
   const handleChange = (e) => {
     setCategory(e.target.value);
-    setErrors((prev) => ({ ...prev, category: "" }));
+    setErrors({});
     setErrorMsg("");
     setSuccessMsg("");
   };
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -29,48 +26,55 @@ const Categories = () => {
       setErrors({});
       setErrorMsg("");
       setSuccessMsg("");
-
       const token = localStorage.getItem("adminToken");
       if (!token) {
         setErrorMsg("You must be logged in to add a category.");
         return;
       }
-
+      setLoading(true);
       const payload = { name: category };
-
-      const response = await axios.post(
+      const res = await fetch(
         "https://devshub.easeesqueezy.com/easeesqueezy_backend/public/api/admin/category",
-        payload,
         {
+          method: "POST",
           headers: {
             Authorization: `Bearer ${token}`,
             "Content-Type": "application/json",
           },
+          body: JSON.stringify(payload),
         }
       );
-
-      if (response.data.status === "Category created successfully") {
+      const data = await res.json();
+      if (res.ok && data.status === "Category created successfully") {
         setSuccessMsg("Category added successfully!");
         setCategory("");
       } else {
         setErrorMsg(
-          response.data.message || "Failed to add category. Please try again."
+          data.message || "Failed to add category. Please try again."
         );
       }
     } catch (err) {
-      if (err.inner) {
+      if (err.name === "ValidationError") {
         const validationErrors = {};
         err.inner.forEach((e) => {
           validationErrors[e.path] = e.message;
         });
         setErrors(validationErrors);
-      } else if (err.response) {
-        setErrorMsg(
-          err.response.data.message || "Server error. Please try again."
-        );
       } else {
         setErrorMsg(err.message || "An error occurred. Please try again.");
       }
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleCancel = (e) => {
+    e.preventDefault();
+    try {
+      setErrors({});
+      setCategory("");
+    } catch (error) {
+      setErrorMsg(error);
     }
   };
 
@@ -78,42 +82,45 @@ const Categories = () => {
     <div className="p-6 bg-white shadow rounded">
       <div className="flex justify-between items-center">
         <h1 className="text-2xl font-bold mb-4">Add Category</h1>
-        <button
-          onClick={() => navigate("/admin/products")}
-          className="bg-[#003b19] text-white px-4 py-2 rounded"
-        >
-          All Products
-        </button>
+        <div className="mt-6 flex  gap-2">
+          <button
+            type="button"
+            onClick={handleCancel}
+            className="bg-gray-400 text-white px-2 py-1 rounded"
+          >
+            <X size={16} />
+          </button>
+          <button
+            type="submit"
+            disabled={loading}
+            form="categoryForm"
+            className={`bg-blue-600 hover:bg-blue-700 text-white px-2 py-1 rounded ${
+              loading ? "bg-gray-400 cursor-not-allowed" : "bg-[#003b19]"
+            }`}
+          >
+            {loading ? "Saving .." : <Save size={16} />}
+          </button>
+          <button
+            onClick={() => navigate("/admin/products")}
+            className="bg-[#003b19] text-white py-1 px-2 rounded"
+          >
+            All Products
+          </button>
+        </div>
       </div>
-      <div className="bg-white shadow-lg rounded-lg p-8 w-full ">
-        <form onSubmit={handleSubmit} className="space-y-4">
-          {/* <div>
-            <label className="block text-gray-700 font-medium">Category</label>
-            <input
-              name="category"
-              className={`w-full px-4 py-2 border rounded-lg focus:outline-none ${
-                errors.category ? "border-red-500" : "border-gray-300"
-              }`}
-              value={category}
-              onChange={handleChange}
-            ></input>
-            {errors.category && (
-              <p className="text-red-500 text-sm">{errors.category}</p>
-            )}
-          </div> */}
 
+      <div className="bg-white rounded-lg p-8 w-full">
+        <form id="categoryForm" onSubmit={handleSubmit} className="space-y-4">
           <Tabs.Root defaultValue="general">
             <Tabs.List className="flex border-b overflow-x-auto">
-              {["General"].map((tab) => (
-                <Tabs.Trigger
-                  key={tab}
-                  value={tab.toLowerCase()}
-                  className="px-4 py-2 text-sm font-medium text-gray-600 hover:text-[#003b19] data-[state=active]:border-b-2 data-[state=active]:border-[#003b19] data-[state=active]:text-[#003b19] data-[state=active]:font-bold "
-                >
-                  {tab}
-                </Tabs.Trigger>
-              ))}
+              <Tabs.Trigger
+                value="general"
+                className="px-4 py-2 text-sm font-medium text-gray-600 hover:text-[#003b19] data-[state=active]:border-b-2 data-[state=active]:border-[#003b19] data-[state=active]:text-[#003b19] data-[state=active]:font-bold "
+              >
+                General
+              </Tabs.Trigger>
             </Tabs.List>
+
             <Tabs.Content value="general" className="p-4">
               {errorMsg && (
                 <div className="mb-4 p-3 rounded-lg bg-red-100 text-red-700 border border-red-300 text-sm text-center">
@@ -125,6 +132,7 @@ const Categories = () => {
                   {successMsg}
                 </div>
               )}
+
               <label className="block font-medium">
                 Category Name <strong className="text-red-500">*</strong>
               </label>
@@ -134,7 +142,7 @@ const Categories = () => {
                 value={category}
                 onChange={handleChange}
                 className={`border w-full p-2 rounded mb-1 focus:outline-none ${
-                  errors.name ? "border-red-500" : "border-gray-300"
+                  errors.category ? "border-red-500" : "border-gray-300"
                 }`}
               />
               {errors.category && (
@@ -142,15 +150,6 @@ const Categories = () => {
               )}
             </Tabs.Content>
           </Tabs.Root>
-
-          <div className="mt-6 flex justify-end gap-4">
-            <button
-              type="submit"
-              className="bg-[#003b19] text-white px-6 py-2 rounded"
-            >
-              Save
-            </button>
-          </div>
         </form>
       </div>
     </div>

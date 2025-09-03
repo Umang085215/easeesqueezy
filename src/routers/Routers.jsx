@@ -4,7 +4,6 @@ import Home from "../easeeSqueezyUser/pages/Home";
 import AddProduct from "../easeeSqueezyAdmin/pages/AddProduct";
 import Dashboard from "../easeeSqueezyAdmin/pages/Dashboard";
 import Products from "../easeeSqueezyAdmin/pages/Products";
-import Filters from "../easeeSqueezyAdmin/pages/Filters";
 import AdminLogin from "../easeeSqueezyAdmin/pages/AdminLogin";
 import Categories from "../easeeSqueezyAdmin/pages/Categories";
 import Manufacture from "../easeeSqueezyAdmin/pages/Manufacture";
@@ -12,6 +11,10 @@ import EditProduct from "../easeeSqueezyAdmin/pages/EditProduct";
 import AdminLayout from "../easeeSqueezyAdmin/layouts/AdminLayout";
 import AdminPrivateRoute from "../easeeSqueezyAdmin/context/AdminPrivateRoute";
 import AdminPublicRoute from "../easeeSqueezyAdmin/context/AdminPublicRoute";
+import About from "../easeeSqueezyUser/pages/About";
+import TermsService from "../easeeSqueezyUser/pages/TermsService";
+import PrivacyPolicy from "../easeeSqueezyUser/pages/PrivacyPolicy";
+import Layout from "../easeeSqueezyUser/layouts/Layout";
 
 const Routers = () => {
   return (
@@ -19,7 +22,12 @@ const Routers = () => {
       <Router>
         {/* User Routing */}
         <Routes>
-          <Route path="/home" element={<Home />} />
+          <Route path="/" element={<Layout />}>
+            <Route index element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/terms-service" element={<TermsService />} />
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          </Route>
         </Routes>
 
         {/* Admin Routing */}

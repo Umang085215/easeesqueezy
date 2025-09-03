@@ -6,13 +6,12 @@ const About = () => {
   return (
     <>
       <section className="bg-[#FDF4B5] pb-20  relative">
-        <div className="relative max-w-7xl  py-16 px-6 md:px-16 overflow-hidden mx-auto">
+        <div className="relative container  py-16 px-6 sm:px-12 md:px-16 overflow-hidden mx-auto">
           <img
             src="/images/f5.png"
             alt="Fruit decoration"
             className="absolute top-6 left-6 w-16 md:w-20 transform rotate-[150deg]"
           />
-
           <img
             src="/images/f5.png"
             alt="Fruit decoration"

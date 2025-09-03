@@ -64,10 +64,10 @@ const Footer = () => {
 
   return (
     <footer className="bg-[#0E4C45] text-white pt-24 pb-6">
-      <div className="max-w-7xl container mx-auto px-6 flex flex-col md:flex-row gap-6">
+      <div className=" container mx-auto px-6 sm:px-12 flex flex-col md:flex-row gap-6">
         <div className="flex-1">
           <h3 className="font-semibold text-lg mb-2">Contact Us</h3>
-          <span className="w-12 h-[2px] bg-orange-500 block mb-4"></span>
+          <span className="w-24 h-[2px] bg-orange-500 block mb-4"></span>
           <p className="text-sm mb-3">
             Shivalik Satyamev, 601, T Junction, near Vakil Saheb Bridge, South
             Bopal, Ambli, Ahmedabad, Gujarat - 380058
@@ -84,30 +84,39 @@ const Footer = () => {
 
         <div className="flex-1">
           <h3 className="font-semibold text-lg mb-2">Useful Links</h3>
-          <span className="w-12 h-[2px] bg-orange-500 block mb-4"></span>
+          <span className="w-24 h-[2px] bg-orange-500 block mb-4"></span>
           <ul className="space-y-2 text-sm">
-            <li>Home</li>
-            <li>About us</li>
-            <li>Blogs</li>
-            <li>Terms Of Service</li>
-            <li>Privacy Policy</li>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/about">About us</Link>
+            </li>
+            <li>
+              <Link to="/terms-service">Terms & Service</Link>
+            </li>
+            <li>
+              <Link to="/privacy-policy">Privacy Policy</Link>
+            </li>
           </ul>
         </div>
 
         <div className="flex-1">
-          <h3 className="font-semibold text-lg mb-2">Drink Special</h3>
-          <span className="w-12 h-[2px] bg-orange-500 block mb-4"></span>
+          <h3 className="font-semibold text-lg mb-2">Our Juices</h3>
+          <span className="w-24 h-[2px] bg-orange-500 block mb-4"></span>
           <ul className="space-y-2 text-sm">
-            <li>Juices</li>
-            <li>Smoothies</li>
-            <li>Shots</li>
-            <li>Soft Drinks</li>
+            <li>
+              <Link to="/">Juices</Link>
+            </li>
+            <li>
+              <Link to="/">Blissful fruit box</Link>
+            </li>
           </ul>
         </div>
 
         <div className="flex-1">
           <h3 className="font-semibold text-lg mb-2">Follow Us Now</h3>
-          <span className="w-12 h-[2px] bg-orange-500 block mb-4"></span>
+          <span className="w-24 h-[2px] bg-orange-500 block mb-4"></span>
           <ul className="space-y-2 text-sm">
             <li>
               <a
@@ -134,7 +143,7 @@ const Footer = () => {
 
         <div className="flex-[1.5]">
           <h3 className="font-semibold text-lg mb-2">NEWSLETTER</h3>
-          <span className="w-12 h-[2px] bg-orange-500 block mb-4"></span>
+          <span className="w-24 h-[2px] bg-orange-500 block mb-4"></span>
           <p className="text-sm mb-4">
             Sign up and get coupon for purchase.
             <br />

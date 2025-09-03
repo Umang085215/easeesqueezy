@@ -10,11 +10,10 @@
 
 body {
   font-family: "Poppins", sans-serif;
-  /* font-family: "Nunito Sans"; */
 }
-.order_title {
+/* .order_title {
   font-family: Sansita One;
-}
+} */
 
 .swiper-slide {
   display: flex !important;

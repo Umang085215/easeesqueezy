@@ -34,7 +34,7 @@ const Features = () => {
   ];
 
   return (
-    <div className="relative lg:absolute -bottom-[60px] left-0 right-0 max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 text-center">
+    <div className="container px-0 sm:px-12 relative lg:absolute -bottom-[60px] left-0 right-0  mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 text-center">
       {features.map((feature, index) => (
         <div
           key={index}

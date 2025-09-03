@@ -14,7 +14,7 @@ const Home = () => {
       <About />
       <ProductShowcase />
       <InquirySection />
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 };

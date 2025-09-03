@@ -3,44 +3,35 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
-
-// git remote set-url origin git@github.com:Anuj2508/easeesqueezy.git
+import Navbar from "./Navbar";
 
 const Hero = () => {
   const slides = [
     {
       title: "Blueberry Watermelon",
-      bottle: "/images/bottel1.png",
-      bg: "bg-gradient-to-b from-green-300 to-green-500",
+      bottle: "/images/bottel6.png",
+      bg: "bg-gradient-to-b  from-[#fa86fa] to-[#4e0449]",
     },
     {
       title: "Vitality Boost Men’s ",
       bottle: "/images/bottel5.png",
-      bg: "bg-gradient-to-b from-red-300 to-red-500",
+      bg: "bg-gradient-to-b from-[#e27a65] to-[#6b0908]",
     },
     {
       title: "Mango & Pineapple",
       bottle: "/images/bottel3.png",
-      bg: "bg-gradient-to-b from-yellow-300 to-yellow-500",
+      bg: "bg-gradient-to-b from-[#fcb339] to-[#b35901]",
     },
     {
       title: "Tomato-Lycopene Shield",
       bottle: "/images/bottel4.png",
-      bg: "bg-gradient-to-b from-pink-300 to-pink-500",
+      bg: "bg-gradient-to-b from-[#b0516f] to-[#480522]",
     },
   ];
-  const commonFlavors = [
-    { name: "Grape Splash", color: "bg-purple-300", src: "/images/juice1.png" },
-    { name: "Watermelon", color: "bg-red-300", src: "/images/juice3.png" },
-    { name: "Pineapple", color: "bg-yellow-300", src: "/images/juice2.png" },
-  ];
+
   return (
     <section className="relative w-full h-screen overflow-hidden">
-      {/* ✅ Logo */}
-      <header className="absolute top-6 left-6 z-30">
-        <img src="/images/new_logo.png" alt="Easee Squeezy" className="w-36" />
-      </header>
-
+      <Navbar />
       {/* Floating icons  */}
 
       <img
@@ -111,33 +102,13 @@ const Hero = () => {
       </Swiper>
 
       <div
-        className="absolute bottom-6 left-0 w-full flex flex-col gap-6 px-4 z-30
+        className="absolute bottom-6 right-0 w-full flex flex-col gap-6 px-4 z-30
           items-center text-center 
-          md:px-10 md:flex-row md:justify-between md:items-end md:text-left"
+          md:px-10 md:justify-between md:items-end md:text-left"
       >
-        <div>
-          <h3 className="text-white font-bold tracking-wide mb-3 md:mb-4">
-            FLAVORS
-          </h3>
-          <div className="flex gap-4 md:gap-6">
-            {commonFlavors.map((flavor, fIndex) => (
-              <div key={fIndex} className="flex flex-col items-center">
-                <img
-                  src={flavor.src}
-                  alt={flavor.name}
-                  className={`w-12 h-12 md:w-20 md:h-20 rounded-full ${flavor.color}`}
-                />
-                <span className="text-white text-[10px] md:text-sm mt-2">
-                  {flavor.name}
-                </span>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        <div className="text-left md:text-right">
+        <div className="text-left">
           <h2 className="font-semibold text-base md:text-xl text-white">
-            Fresh, Healthy, and Natural Juices3
+            Fresh, Healthy, and Natural Juices
           </h2>
           <h3 className="font-semibold text-base md:text-xl text-green-800">
             Delivered to Your doorstep daily.

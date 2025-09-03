@@ -1,4 +1,3 @@
-
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Autoplay } from "swiper/modules";
 import "swiper/css";
@@ -46,15 +45,14 @@ const products = [
 
 const ProductShowcase = () => {
   return (
-    <section className="mx-auto mt-0 pb-10 pt-10 sm:mt-[4rem] text-center px-3">
-      <h1 className="text-3xl md:text-4xl font-extrabold text-[#0E4C45]">
-        PRODUCT SHOWCASE NEW
+    <section className="container mx-auto mt-0 pb-10 pt-10 sm:mt-[4rem] text-center ">
+      <h1 className="text-3xl md:text-4xl font-extrabold text-[#0E4C45] px-3">
+        JUICE PARADISE
       </h1>
-      <p className="text-gray-600 mt-2 mb-8">
+      <p className="text-gray-600 mt-2 mb-8 px-3">
         Enjoy our take on the classic flavors you know and love.
       </p>
 
-     
       <div className="relative mb-10 mt-10">
         <Swiper
           modules={[Navigation, Autoplay]}
@@ -64,7 +62,7 @@ const ProductShowcase = () => {
           }}
           loop={true}
           autoplay={{
-            delay: 2500,
+            delay: 1500,
             disableOnInteraction: false,
           }}
           spaceBetween={20}
@@ -82,7 +80,6 @@ const ProductShowcase = () => {
             <SwiperSlide key={i} className="flex justify-center">
               <div className="w-[260px]">
                 {" "}
-                {/* fixed equal card width */}
                 <JuiceCard
                   img={product.img}
                   title={product.title}

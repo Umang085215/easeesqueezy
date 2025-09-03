@@ -1,23 +1,20 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
+  const navigate = useNavigate();
   return (
     <>
-      <section>
-        <header className="absolute top-6 left-6 flex items-center gap-3">
-          <img
-            src="/images/logo.png"
-            alt="Easee Squeezy"
-            className="h-10 md:h-14"
-          />
-        </header>
-
-        <button className="absolute top-6 right-6 bg-white p-3 rounded-full shadow-md">
-          <span className="block w-6 h-0.5 bg-purple-600 mb-1"></span>
-          <span className="block w-6 h-0.5 bg-purple-600 mb-1"></span>
-          <span className="block w-6 h-0.5 bg-purple-600"></span>
-        </button>
-      </section>
+      <div
+        className="absolute top-6 left-6 z-30 cursor-pointer"
+        onClick={() => navigate("/")}
+      >
+        <img
+          src="/images/new_logo.png"
+          alt="Easee Squeezy"
+          className="w-36 max-w-full h-auto"
+        />
+      </div>
     </>
   );
 };
