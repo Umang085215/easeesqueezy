@@ -88,10 +88,10 @@ const InquirySection = () => {
   return (
     <section
       id="inquiry"
-      className=" pb-20 pt-10 bg-[#FFD965] bg-[url('/images/contactbg.png')] bg-center bg-no-repeat bg-blend-multiply"
+      className="  bg-[url('/images/contactbg.png')] bg-center bg-no-repeat bg-blend-multiply"
     >
-      <div className="container mx-auto px-6 sm:px-12 grid grid-cols-1 lg:grid-cols-2 gap-10  md:px-6 lg:px-8 pt-0 pb-16 sm:pt-[4rem] items-center">
-        <div className="mobileForm bg-white mb-[-200px] shadow-lg rounded-lg px-4 sm:px-8 pt-10 pb-20 order-2 lg:order-1">
+      <div className="container mx-auto px-6 sm:px-12 grid grid-cols-1 lg:grid-cols-2 gap-10  pt-0 pb-16 sm:pt-[4rem] items-center">
+        <div className="mobileForm bg-white  shadow-lg rounded-lg px-4 sm:px-8 pt-20 pb-20 order-2 lg:order-1">
           <h2 className="text-2xl md:text-3xl font-bold text-[#134B34] mb-2">
             We Value Your Feedback
           </h2>
@@ -171,16 +171,16 @@ const InquirySection = () => {
         <div className="relative pt-0 pb-12 sm:pt-[3rem] flex flex-col justify-between h-full order-1 lg:order-2">
           <div>
             <h3 className="order_title text-4xl font-extrabold text-[#CA9D15] mb-3">
-              FOR ORDER
+              Want Juice ? We Got You !
             </h3>
             <p className="text-gray-700 mb-6 max-w-md">
-              Feel free to reach us on our WhatsApp and email address for order.
-              <br /> Receive your order at your doorstep.
+              Slide into our WhatsApp or drop us an email to place your order.
+              It’s that simple.
             </p>
 
-            <div className="flex flex-col gap-4 mb-10">
+            <div className="flex flex-col gap-4 mb-5">
               <div className="w-max flex items-center gap-3 bg-[#E8C044] px-4 py-2 rounded-full text-white font-bold shadow">
-                <FaWhatsapp className="text-xl" />
+                <FaWhatsapp className="text-xl text-green-700" />
                 <span>+91 84900-91122</span>
               </div>
               <div className="w-max flex items-center gap-3 bg-[#E8C044] px-4 py-2 rounded-full text-white font-bold shadow">
@@ -188,9 +188,12 @@ const InquirySection = () => {
                 <span>easeesqueezy@gmail.com</span>
               </div>
             </div>
+            <p className="text-gray-700 mb-6 max-w-md ">
+              🚚 Fresh juice, straight to your door — no hassle, just health!
+            </p>
           </div>
 
-          <div className="absolute -bottom-[140px] right-[30px] lg:-bottom-[80px] lg:right-[20px] flex items-end justify-center lg:justify-start">
+          <div className="absolute -bottom-[140px] right-[30px] lg:bottom-[0px] lg:right-[20px] flex items-end justify-center lg:justify-start">
             <img
               src="/images/contact1.png"
               alt="Oranges"

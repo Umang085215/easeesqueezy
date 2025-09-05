@@ -5,6 +5,7 @@ import Footer from "../components/Footer";
 import ProductShowcase from "../components/ProductShowCase";
 import About from "./About";
 import Doorstep from "../components/Doorstep";
+import Testimonial from "../components/Testomonial";
 
 const Home = () => {
   return (
@@ -13,6 +14,7 @@ const Home = () => {
       <Doorstep />
       <About />
       <ProductShowcase />
+      <Testimonial />
       <InquirySection />
       {/* <Footer /> */}
     </>

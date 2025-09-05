@@ -45,7 +45,7 @@ const products = [
 
 const ProductShowcase = () => {
   return (
-    <section className="container mx-auto mt-0 pb-10 pt-10 sm:mt-[4rem] text-center ">
+    <section className="container mx-auto mt-0 pb-10 pt-10  text-center ">
       <h1 className="text-3xl md:text-4xl font-extrabold text-[#0E4C45] px-3">
         JUICE PARADISE
       </h1>

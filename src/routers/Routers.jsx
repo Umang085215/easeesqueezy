@@ -15,6 +15,9 @@ import About from "../easeeSqueezyUser/pages/About";
 import TermsService from "../easeeSqueezyUser/pages/TermsService";
 import PrivacyPolicy from "../easeeSqueezyUser/pages/PrivacyPolicy";
 import Layout from "../easeeSqueezyUser/layouts/Layout";
+import Contact from "../easeeSqueezyUser/pages/Contact";
+import Cart from "../easeeSqueezyUser/pages/Cart";
+import Juice from "../easeeSqueezyUser/pages/Juice";
 
 const Routers = () => {
   return (
@@ -25,6 +28,9 @@ const Routers = () => {
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
             <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/cart" element={<Cart />} />
+            <Route path="/juice" element={<Juice />} />
             <Route path="/terms-service" element={<TermsService />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           </Route>

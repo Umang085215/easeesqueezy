@@ -8,30 +8,62 @@ import Navbar from "./Navbar";
 const Hero = () => {
   const slides = [
     {
-      title: "Blueberry Watermelon",
-      bottle: "/images/bottel6.png",
-      bg: "bg-gradient-to-b  from-[#fa86fa] to-[#4e0449]",
-    },
-    {
-      title: "Vitality Boost Men’s ",
-      bottle: "/images/bottel5.png",
-      bg: "bg-gradient-to-b from-[#e27a65] to-[#6b0908]",
+      title: "Orange",
+      bottle: "/images/bottel2.png",
+      bg: "bg-gradient-to-b   from-[#f2826c] to-[#b42f1a]",
     },
     {
       title: "Mango & Pineapple",
       bottle: "/images/bottel3.png",
-      bg: "bg-gradient-to-b from-[#fcb339] to-[#b35901]",
+      bg: "bg-gradient-to-b from-[#f7be59] to-[#b35901]",
     },
     {
-      title: "Tomato-Lycopene Shield",
-      bottle: "/images/bottel4.png",
-      bg: "bg-gradient-to-b from-[#b0516f] to-[#480522]",
+      title: "Kiwi",
+      bottle: "/images/bottel1.png",
+      bg: "bg-gradient-to-b from-[#dcf570] to-[#505f18]",
+    },
+    {
+      title: "Dragon Fruit",
+      bottle: "/images/bottel5.png",
+      bg: "bg-gradient-to-b from-[#dc5f45] to-[#570505]",
+    },
+    {
+      title: "Spearmint",
+      bottle: "/images/bottel1.png",
+      bg: "bg-gradient-to-b from-[#dcf570] to-[#505f18]",
+    },
+    {
+      title: "Blueberry Watermelon",
+      bottle: "/images/bottel6.png",
+      bg: "bg-gradient-to-b  from-[#fa86fa] to-[#4e0449]",
     },
   ];
+  // const slides = [
+  //   {
+  //     title: "Blueberry Watermelon",
+  //     bottle: "/images/bottel6.png",
+  //     bg: "bg-gradient-to-b  from-[#fa86fa] to-[#4e0449]",
+  //   },
+  //   {
+  //     title: "Vitality Boost Men’s ",
+  //     bottle: "/images/bottel5.png",
+  //     bg: "bg-gradient-to-b from-[#e27a65] to-[#6b0908]",
+  //   },
+  //   {
+  //     title: "Mango & Pineapple",
+  //     bottle: "/images/bottel3.png",
+  //     bg: "bg-gradient-to-b from-[#fcb339] to-[#b35901]",
+  //   },
+  //   {
+  //     title: "Tomato-Lycopene Shield",
+  //     bottle: "/images/bottel4.png",
+  //     bg: "bg-gradient-to-b from-[#b0516f] to-[#480522]",
+  //   },
+  // ];
 
   return (
     <section className="relative w-full h-screen overflow-hidden">
-      <Navbar />
+      {/* <Navbar /> */}
       {/* Floating icons  */}
 
       <img
@@ -78,8 +110,8 @@ const Hero = () => {
 
       <Swiper
         modules={[Pagination, Autoplay]}
-        autoplay={{ delay: 3000 }}
-        loop
+        // autoplay={{ delay: 3000 }}
+        // loop
         className="w-full h-full relative z-10"
       >
         {slides.map((slide, index) => (
