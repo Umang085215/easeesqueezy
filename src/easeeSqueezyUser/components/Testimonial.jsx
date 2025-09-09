@@ -4,7 +4,6 @@ import { Navigation, Autoplay, EffectCoverflow } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/effect-coverflow";
-import { ArrowLeft, ArrowRight } from "lucide-react";
 import TestimonialCard from "./TestimonialCard";
 
 const testimonials = [

@@ -80,14 +80,14 @@ const Footer = () => {
             <span className="w-24 h-[2px] bg-orange-500 block mb-4"></span>
             <div className="flex items-center">
               <a
-                href="https://www.facebook.com/Juicefactoryindi"
+                href="https://www.facebook.com/share/15wLPs1mcb/?mibextid=wwXIfr"
                 target="blank"
                 class="px-2"
               >
                 <FaFacebookF />
               </a>
               <a
-                href="https://www.instagram.com/juicefactory_official/"
+                href="https://www.instagram.com/easee_squeezy"
                 target="blank"
                 class="px-2"
               >

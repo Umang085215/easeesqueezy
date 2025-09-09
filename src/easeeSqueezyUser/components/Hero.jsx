@@ -160,37 +160,37 @@ const slides = [
       },
     ],
   },
-  {
-    title: "Blueberry-Watermelon ",
-    bottle: "/images/sliderBottels/blueberry.png",
-    bg: "bg-[radial-gradient(circle_at_center,_#a7c8e0,_#6da4cb)]",
-    fruitIcons: [
-      {
-        src: "/images/fruitIcons/b4.png",
-        className: "absolute top-[5%] left-[10%] w-36 z-20 icon-float1",
-      },
-      {
-        src: "/images/fruitIcons/b5.png",
-        className: "absolute top-[45%] left-[8%] w-24 z-20 icon-float2",
-      },
-      {
-        src: "/images/fruitIcons/leaf2.png",
-        className: "absolute bottom-[10%] left-[15%] w-24 z-20 icon-float3",
-      },
-      {
-        src: "/images/fruitIcons/leaf1.png",
-        className: "absolute top-[10%] right-[15%] w-24 z-20 icon-float4",
-      },
-      {
-        src: "/images/fruitIcons/b6.png",
-        className: "absolute top-[50%] right-[8%] w-36 z-20 icon-float1",
-      },
-      {
-        src: "/images/fruitIcons/b4.png",
-        className: "absolute bottom-[10%] right-[15%] w-24 z-20 icon-float2",
-      },
-    ],
-  },
+  // {
+  //   title: "Blueberry-Watermelon ",
+  //   bottle: "/images/sliderBottels/blueberry.png",
+  //   bg: "bg-[radial-gradient(circle_at_center,_#a7c8e0,_#6da4cb)]",
+  //   fruitIcons: [
+  //     {
+  //       src: "/images/fruitIcons/b4.png",
+  //       className: "absolute top-[5%] left-[10%] w-36 z-20 icon-float1",
+  //     },
+  //     {
+  //       src: "/images/fruitIcons/b5.png",
+  //       className: "absolute top-[45%] left-[8%] w-24 z-20 icon-float2",
+  //     },
+  //     {
+  //       src: "/images/fruitIcons/leaf2.png",
+  //       className: "absolute bottom-[10%] left-[15%] w-24 z-20 icon-float3",
+  //     },
+  //     {
+  //       src: "/images/fruitIcons/leaf1.png",
+  //       className: "absolute top-[10%] right-[15%] w-24 z-20 icon-float4",
+  //     },
+  //     {
+  //       src: "/images/fruitIcons/b6.png",
+  //       className: "absolute top-[50%] right-[8%] w-36 z-20 icon-float1",
+  //     },
+  //     {
+  //       src: "/images/fruitIcons/b4.png",
+  //       className: "absolute bottom-[10%] right-[15%] w-24 z-20 icon-float2",
+  //     },
+  //   ],
+  // },
 ];
 
 const Hero = () => {

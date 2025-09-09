@@ -94,17 +94,28 @@ const Header = () => {
             Home
           </Link>
           <Link to="/about" onClick={() => setIsOpen(false)}>
-            About
+            About-Us
           </Link>
-          <Link to="/juice" onClick={() => setIsOpen(false)}>
-            Juices
+          <Link to="/juices" onClick={() => setIsOpen(false)}>
+            Juices & Fruit-Box
           </Link>
-          <Link to="/contact" onClick={() => setIsOpen(false)}>
+          <Link
+            to="/"
+            onClick={(e) => {
+              e.preventDefault();
+              navigate("/", { replace: false });
+              setTimeout(() => {
+                const el = document.getElementById("inquiry");
+                if (el) el.scrollIntoView({ behavior: "smooth" });
+              }, 100);
+              setIsOpen(false);
+            }}
+          >
             Contact
           </Link>
-          <Link to="/cart" onClick={() => setIsOpen(false)}>
+          {/* <Link to="/cart" onClick={() => setIsOpen(false)}>
             Cart
-          </Link>
+          </Link> */}
         </div>
       </div>
 
