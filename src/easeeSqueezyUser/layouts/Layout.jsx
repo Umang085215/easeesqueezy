@@ -1,18 +1,14 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
-import Footer from "../components/Footer";
-import Navbar from "../components/Navbar";
 import "../styles/style.css";
 import Header from "../components/Header";
-import StickyHeader from "../components/StickyHeader";
+import Footer from "../components/Footer";
 
 const Layout = () => {
   return (
-    <div>
-      <StickyHeader />
+    <div className="flex flex-col min-h-screen">
       <Header />
-
-      <main>
+      <main className="flex-1 pt-[120px]">
         <Outlet />
       </main>
       <Footer />

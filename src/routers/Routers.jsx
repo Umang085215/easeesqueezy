@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import ScrollToTop from "../../utility/ScrollToTop";
 import Home from "../easeeSqueezyUser/pages/Home";
 import AddProduct from "../easeeSqueezyAdmin/pages/AddProduct";
 import Dashboard from "../easeeSqueezyAdmin/pages/Dashboard";
@@ -23,6 +24,7 @@ const Routers = () => {
   return (
     <>
       <Router>
+        <ScrollToTop />
         {/* User Routing */}
         <Routes>
           <Route path="/" element={<Layout />}>
@@ -30,7 +32,7 @@ const Routers = () => {
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/cart" element={<Cart />} />
-            <Route path="/juice" element={<Juice />} />
+            <Route path="/juices" element={<Juice />} />
             <Route path="/terms-service" element={<TermsService />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           </Route>

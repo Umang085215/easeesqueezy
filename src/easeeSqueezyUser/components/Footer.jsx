@@ -108,10 +108,10 @@ const Footer = () => {
             </li>
             <li>
               <Link to="/about" className="hover:text-[#f9aa01] flex">
-                <ChevronsRight /> About us
+                <ChevronsRight /> About-Us
               </Link>
             </li>
-            <li>
+            {/* <li>
               <Link to="/terms-service" className="hover:text-[#f9aa01] flex">
                 <ChevronsRight /> Terms & Service
               </Link>
@@ -120,7 +120,7 @@ const Footer = () => {
               <Link to="/privacy-policy" className="hover:text-[#f9aa01] flex">
                 <ChevronsRight /> Privacy Policy
               </Link>
-            </li>
+            </li> */}
           </ul>
         </div>
 
@@ -129,12 +129,12 @@ const Footer = () => {
           <span className="w-24 h-[2px] bg-orange-500 block mb-4"></span>
           <ul className="space-y-2">
             <li>
-              <Link to="/" className="hover:text-[#f9aa01] flex">
-                <ChevronsRight /> Juices
+              <Link to="/juices" className="hover:text-[#f9aa01] flex">
+                <ChevronsRight /> Juices & Fruit-Box
               </Link>
             </li>
             <li>
-              <Link to="/" className="hover:text-[#f9aa01] flex">
+              <Link to="/juices" className="hover:text-[#f9aa01] flex">
                 <ChevronsRight /> Blissful fruit box
               </Link>
             </li>
@@ -149,7 +149,7 @@ const Footer = () => {
               <MapPin />
               <p class="location text-dark">
                 <span class="fw-bold">
-                  Shivalik Satyamev, 601, near Vakil Saheb Bridge
+                  601, Shivalik Satyamev, near Vakil Saheb Bridge
                 </span>
                 <br />
                 South Bopal, Ambli, Ahmedabad, Gujarat - 380058
@@ -181,36 +181,6 @@ const Footer = () => {
             </a>
           </div>
         </div>
-
-        {/* <div className="flex-[1.5]">
-          <h3 className="font-semibold text-lg mb-2">NEWSLETTER</h3>
-          <span className="w-24 h-[2px] bg-orange-500 block mb-4"></span>
-          <p className="text-sm mb-4">
-            Sign up and get coupon for purchase.
-            <br />
-            Earn points & Redeem the rewards. It’s that easy.
-          </p>
-          <div className="flex flex-col sm:flex-row  overflow-hidden text-sm w-full max-w-md mx-auto sm:gap-0 gap-2">
-            <input
-              type="email"
-              name="newsEmail"
-              value={newsEmail}
-              onChange={(e) => setNewsEmail(e.target.value)}
-              required
-              placeholder="Enter your email..."
-              className="flex-1 px-3 py-2 text-black outline-none rounded-full sm:rounded-l-full sm:rounded-r-none"
-            />
-            <button
-              onClick={handleNewsLetter}
-              className="flex-1 py-2 bg-orange-500 text-white flex items-center justify-center rounded-full sm:rounded-r-full sm:rounded-l-none"
-            >
-              <IoMdArrowRoundForward className="mr-1" />
-              <strong>Subscribe</strong>
-            </button>
-          </div>
-
-          {error && <p className="text-red-400 text-sm mt-2">{error}</p>}
-        </div> */}
       </div>
 
       <div className="container max-w-6xl border border-dashed rounded-lg sm:rounded-full mx-auto px-3 py-6 mt-5 sm:mt-10 text-center ">
@@ -255,7 +225,10 @@ const Footer = () => {
 
       <div className="text-center text-sm text-gray-200 mt-10 border-t border-gray-600 pt-4">
         © 2025 Easse Squeezy All Rights Reserved. <br />
-        Design and Develop by Ecode Dash
+        Design and Develop by{" "}
+        <a href="https://www.ecodedash.com/" target="_blank">
+          Ecode Dash Pvt Ltd
+        </a>
       </div>
     </footer>
   );

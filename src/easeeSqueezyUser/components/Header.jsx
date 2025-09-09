@@ -1,12 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { ShoppingCart, CircleUserRound } from "lucide-react";
+import { ShoppingCart, CircleUserRound, Menu, X } from "lucide-react";
+import StickyHeader from "../components/StickyHeader";
 
 const Header = () => {
   const navigate = useNavigate();
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
-    <section className="bg-white text-[#003c17]">
-      <div className="container  m-auto py-2 px-6 sm:px-12  flex items-center justify-between">
+    <header className="bg-white text-[#003c17] shadow-md fixed top-0 left-0 w-full z-50">
+      <StickyHeader />
+      <div className="container m-auto py-2 px-6 sm:px-12 flex items-center justify-between">
+        {/* Logo */}
         <div
           className="headerLogo cursor-pointer"
           onClick={() => navigate("/")}
@@ -14,23 +19,103 @@ const Header = () => {
           <img
             src="/images/new_logo.png"
             alt="Easee Squeezy"
+            loading="lazy"
             className="w-24 max-w-full h-auto"
           />
         </div>
-        <div className="flex items-center gap-6 font-bold">
-          <Link to="/">Home</Link>
-          <Link to="/about">About</Link>
-          <Link to="/juice">Juices</Link>
-          <Link to="/contact">Contact</Link>
-        </div>
-        <div className="rightContent flex items-center gap-5 cursor-pointer">
-          <Link to="/cart">
+
+        {/* Desktop Nav */}
+        <nav className="hidden md:flex items-center gap-10 text-lg font-semibold">
+          <Link
+            to="/"
+            className="transition delay-150 duration-300 ease-in-out hover:text-[#fd9b03] "
+          >
+            Home
+          </Link>
+          <Link
+            to="/about"
+            className="transition delay-150 duration-300 ease-in-out hover:text-[#fd9b03]"
+          >
+            About-Us
+          </Link>
+          <Link
+            to="/juices"
+            className="transition delay-150 duration-300 ease-in-out hover:text-[#fd9b03]"
+          >
+            Juices & Fruit-Box
+          </Link>
+          <Link
+            to="/"
+            className="transition delay-150 duration-300 ease-in-out hover:text-[#fd9b03]"
+            onClick={(e) => {
+              e.preventDefault();
+              navigate("/", { replace: false });
+              setTimeout(() => {
+                const el = document.getElementById("inquiry");
+                if (el) el.scrollIntoView({ behavior: "smooth" });
+              }, 100);
+            }}
+          >
+            Contact
+          </Link>
+        </nav>
+
+        {/* Right Content */}
+        <div className="flex items-center gap-5">
+          {/* <Link to="/cart">
             <ShoppingCart />
           </Link>
-          <CircleUserRound />
+          <CircleUserRound className="hidden md:block" /> */}
+
+          <button
+            className="md:hidden"
+            onClick={() => setIsOpen(!isOpen)}
+            aria-label="Toggle Menu"
+          >
+            {isOpen ? <X size={28} /> : <Menu size={28} />}
+          </button>
         </div>
       </div>
-    </section>
+
+      {/* Mobile Menu (Slide from right) */}
+      <div
+        className={`fixed top-0 right-0 h-full w-64 bg-white shadow-lg transform transition-transform duration-300 ease-in-out z-40
+          ${isOpen ? "translate-x-0" : "translate-x-full"}`}
+      >
+        <div className="flex flex-col p-6 space-y-6 text-lg font-semibold">
+          <button
+            className="self-end"
+            onClick={() => setIsOpen(false)}
+            aria-label="Close Menu"
+          >
+            <X size={28} />
+          </button>
+          <Link to="/" onClick={() => setIsOpen(false)}>
+            Home
+          </Link>
+          <Link to="/about" onClick={() => setIsOpen(false)}>
+            About
+          </Link>
+          <Link to="/juice" onClick={() => setIsOpen(false)}>
+            Juices
+          </Link>
+          <Link to="/contact" onClick={() => setIsOpen(false)}>
+            Contact
+          </Link>
+          <Link to="/cart" onClick={() => setIsOpen(false)}>
+            Cart
+          </Link>
+        </div>
+      </div>
+
+      {/* Overlay */}
+      {isOpen && (
+        <div
+          className="fixed inset-0 bg-black bg-opacity-40 z-30"
+          onClick={() => setIsOpen(false)}
+        />
+      )}
+    </header>
   );
 };
 

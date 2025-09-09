@@ -169,7 +169,7 @@ const InquirySection = () => {
         </div>
 
         <div className="relative pt-0 pb-12 sm:pt-[3rem] flex flex-col justify-between h-full order-1 lg:order-2">
-          <div>
+          <div className="z-30">
             <h3 className="order_title text-4xl font-extrabold text-[#CA9D15] mb-3">
               Want Juice ? We Got You !
             </h3>
@@ -193,16 +193,18 @@ const InquirySection = () => {
             </p>
           </div>
 
-          <div className="absolute -bottom-[140px] right-[30px] lg:bottom-[0px] lg:right-[20px] flex items-end justify-center lg:justify-start">
+          <div className="absolute -bottom-[140px] right-[0px] lg:bottom-[0px] lg:right-[20px] flex items-center justify-center lg:justify-start z-0">
             <img
               src="/images/contact1.png"
               alt="Oranges"
-              className="w-40 md:w-48 lg:w-60 relative z-10 drop-shadow-2xl h-[230px] sm:h-[300px]"
+              loading="lazy"
+              className="w-80 md:w-48 lg:w-60 relative z-10 drop-shadow-2xl h-[250px] sm:h-[300px]"
             />
             <img
-              src="/images/bottel3.png"
+              src="/images/sliderBottels/mango.png"
               alt="Juice Bottle"
-              className="w-64 sm:w-32 md:w-44 lg:w-56 -ml-[6rem] z-20 drop-shadow-2xl h-[220px] sm:h-[350px]"
+              loading="lazy"
+              className="w-full -ml-[6rem] sm:-ml-[8rem] z-20 drop-shadow-2xl h-[300px] sm:h-[400px]"
             />
           </div>
         </div>

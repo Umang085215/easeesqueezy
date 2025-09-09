@@ -24,7 +24,7 @@ body {
   overflow: hidden;
   position: relative;
   white-space: nowrap;
-  z-index: 9999;
+  /* z-index: 30; */
 }
 .scroll-text {
   display: inline-block;

@@ -12,6 +12,7 @@ const Navbar = () => {
         <img
           src="/images/new_logo.png"
           alt="Easee Squeezy"
+          loading="lazy"
           className="w-36 max-w-full h-auto"
         />
       </div>
