@@ -6,7 +6,6 @@ const AboutContent = () => {
   const navigate = useNavigate();
   const ref = useRef(null);
 
-  // Parallax for the fruit decoration
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start end", "end start"],

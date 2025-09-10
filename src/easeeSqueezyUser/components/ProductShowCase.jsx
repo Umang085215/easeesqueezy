@@ -208,8 +208,8 @@ const ProductShowcase = () => {
           <Swiper
             modules={[Navigation, Autoplay]}
             navigation={{
-              nextEl: ".next-btn",
-              prevEl: ".prev-btn",
+              nextEl: ".product-next-btn",
+              prevEl: ".product-prev-btn",
             }}
             loop={true}
             autoplay={{
@@ -241,12 +241,11 @@ const ProductShowcase = () => {
               </SwiperSlide>
             ))}
           </Swiper>
-
           <div className="mt-10 flex gap-4 w-full justify-center">
-            <button className="prev-btn w-10 h-10 flex items-center justify-center border border-[#0E4C45] rounded-full hover:bg-[#0E4C45] hover:text-white transition">
+            <button className="product-prev-btn w-10 h-10 flex items-center justify-center border border-[#0E4C45] rounded-full hover:bg-[#0E4C45] hover:text-white transition">
               <ArrowLeft />
             </button>
-            <button className="next-btn w-10 h-10 flex items-center justify-center border border-[#0E4C45] rounded-full hover:bg-[#0E4C45] hover:text-white transition">
+            <button className="product-next-btn w-10 h-10 flex items-center justify-center border border-[#0E4C45] rounded-full hover:bg-[#0E4C45] hover:text-white transition">
               <ArrowRight />
             </button>
           </div>

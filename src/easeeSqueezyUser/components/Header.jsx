@@ -62,11 +62,6 @@ const Header = () => {
 
         {/* Right Content */}
         <div className="flex items-center gap-5">
-          {/* <Link to="/cart">
-            <ShoppingCart />
-          </Link>
-          <CircleUserRound className="hidden md:block" /> */}
-
           <button
             className="md:hidden"
             onClick={() => setIsOpen(!isOpen)}
@@ -113,13 +108,9 @@ const Header = () => {
           >
             Contact
           </Link>
-          {/* <Link to="/cart" onClick={() => setIsOpen(false)}>
-            Cart
-          </Link> */}
         </div>
       </div>
 
-      {/* Overlay */}
       {isOpen && (
         <div
           className="fixed inset-0 bg-black bg-opacity-40 z-30"

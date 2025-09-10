@@ -16,7 +16,6 @@ const TestimonialCard = ({ testimonial }) => {
         <div className="w-full flex items-center justify-between mt-auto relative z-10">
           <div className="flex">{renderStars(testimonial.rating)}</div>
           <h3 className="font-bold text-gray-800">{testimonial.name}</h3>
-          {/* <span className="text-sm text-gray-500">{testimonial.role}</span> */}
         </div>
 
         {/* Hover Image */}

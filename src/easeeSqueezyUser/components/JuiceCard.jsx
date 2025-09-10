@@ -22,18 +22,3 @@ const JuiceCard = ({ img, title, des, bg }) => {
 };
 
 export default JuiceCard;
-
-//  <div
-//       className={`card relative rounded-xl p-6 flex flex-col items-center justify-center text-white ${bg}`}
-//     >
-//       <img
-//         src={img}
-//         alt={title}
-//         loading="lazy"
-//         className="object-contain mb-0"
-//       />
-//       <h2 className="text-xl font-bold text-[#0e4c45]">{title}</h2>
-//       <p className="text-sm mt-1 text-center text-[#0e4c45]">
-//         Lorem Ipsum is simply dummy text of the printing and typesetting
-//       </p>
-//     </div>

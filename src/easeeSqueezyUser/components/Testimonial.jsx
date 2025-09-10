@@ -63,8 +63,8 @@ const Testimonial = () => {
         <Swiper
           modules={[Navigation, Autoplay, EffectCoverflow]}
           navigation={{
-            nextEl: ".next-btn",
-            prevEl: ".prev-btn",
+            nextEl: ".testimonial-next-btn",
+            prevEl: ".testimonial-prev-btn",
           }}
           effect="coverflow"
           coverflowEffect={{
@@ -80,7 +80,7 @@ const Testimonial = () => {
             disableOnInteraction: true,
           }}
           centeredSlides={true}
-          slidesPerView="auto"
+          // slidesPerView="auto"
           spaceBetween={0}
           breakpoints={{
             0: { slidesPerView: 1 },

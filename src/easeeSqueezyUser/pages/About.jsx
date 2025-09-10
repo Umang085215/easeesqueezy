@@ -1,9 +1,6 @@
 import React from "react";
 
-import { useNavigate } from "react-router-dom";
-
 const About = () => {
-  const navigate = useNavigate();
   return (
     <>
       <section className=" relative">
@@ -44,9 +41,6 @@ const About = () => {
           <div className="max-w-5xl mx-auto my-10  shadow-lg rounded-lg ">
             <div className="flex flex-col md:flex-row">
               <div className="md:w-1/2 p-6 flex flex-col justify-center">
-                <h2 className="text-2xl font-bold mb-4 text-gray-800">
-                  Delicious shubham Tea
-                </h2>
                 <p className="text-gray-600 mb-4">
                   But we didn’t stop there. We reimagined juice beyond the
                   basics of orange, pineapple, or sweet lime. By blending unique
@@ -81,12 +75,10 @@ const About = () => {
           />
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 items-center mx-auto">
-            {/* Right side image comes first on mobile */}
             <div className="relative flex justify-center order-1 md:order-2 md:col-span-1">
               <img src="/images/c5.png" alt="About Easee Squeezy" />
             </div>
 
-            {/* Left side text spans 2 cols on desktop */}
             <div className="order-2 md:order-1 md:col-span-2">
               <h2 className="about-title text-4xl sm:text-5xl lg:text-6xl font-[700] text-gray-900 mb-8 leading-[1.2]">
                 Refresh Naturally with <br />

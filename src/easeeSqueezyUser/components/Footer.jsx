@@ -1,10 +1,5 @@
 import React, { useState, useEffect } from "react";
-import {
-  FaFacebookF,
-  FaInstagram,
-  FaPaperPlane,
-  FaPhoneAlt,
-} from "react-icons/fa";
+import { FaFacebookF, FaInstagram } from "react-icons/fa";
 import { MapPin, Phone, MailCheck, ChevronsRight } from "lucide-react";
 import { IoMdArrowRoundForward } from "react-icons/io";
 import { Link } from "react-router-dom";

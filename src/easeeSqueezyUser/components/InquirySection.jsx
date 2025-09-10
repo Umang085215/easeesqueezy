@@ -91,7 +91,7 @@ const InquirySection = () => {
       className="  bg-[url('/images/contactbg.png')] bg-center bg-no-repeat bg-blend-multiply"
     >
       <div className="container mx-auto px-6 sm:px-12 grid grid-cols-1 lg:grid-cols-2 gap-10  pt-0 pb-16 sm:pt-[4rem] items-center">
-        <div className="mobileForm bg-white  shadow-lg rounded-lg px-4 sm:px-8 pt-20 pb-20 order-2 lg:order-1">
+        <div className="mobileForm bg-white  shadow-lg rounded-lg px-4 sm:px-8 py-8 order-2 lg:order-1">
           <h2 className="text-2xl md:text-3xl font-bold text-[#134B34] mb-2">
             We Value Your Feedback
           </h2>
