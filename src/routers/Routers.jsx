@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import ScrollToTop from "../../utility/ScrollToTop";
+import ScrollToTop from "../utility/ScrollToTop";
 import Home from "../easeeSqueezyUser/pages/Home";
 import AddProduct from "../easeeSqueezyAdmin/pages/AddProduct";
 import Dashboard from "../easeeSqueezyAdmin/pages/Dashboard";

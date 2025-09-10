@@ -36,7 +36,7 @@ const slides = [
       {
         src: "/images/fruitIcons/o2.png",
         className:
-          " absolute bottom-[20%] sm:bottom-[15%] right-[10%] w-24 z-20 icon-float4",
+          " absolute bottom-[20%] sm:bottom-[15%] right-[15%] w-24 z-20 icon-float4",
       },
     ],
   },
@@ -70,7 +70,7 @@ const slides = [
       {
         src: "/images/fruitIcons/p5.png",
         className:
-          "absolute bottom-[20%] sm:bottom-[15%] right-[10%] w-24 z-20 icon-float4",
+          "absolute bottom-[20%] sm:bottom-[15%] right-[15%] w-24 z-20 icon-float4",
       },
     ],
   },
@@ -104,7 +104,7 @@ const slides = [
       {
         src: "/images/fruitIcons/k9.png",
         className:
-          "absolute bottom-[20%] sm:bottom-[15%] right-[10%] w-24 z-20 icon-float4",
+          "absolute bottom-[20%] sm:bottom-[15%] right-[15%] w-24 z-20 icon-float4",
       },
     ],
   },
@@ -138,7 +138,7 @@ const slides = [
       {
         src: "/images/fruitIcons/tomato1.png",
         className:
-          "absolute bottom-[20%] sm:bottom-[15%] right-[10%] w-24 z-20 icon-float4",
+          "absolute bottom-[20%] sm:bottom-[15%] right-[15%] w-24 z-20 icon-float4",
       },
     ],
   },
@@ -172,7 +172,7 @@ const slides = [
       {
         src: "/images/fruitIcons/s1.png",
         className:
-          "absolute bottom-[20%] sm:bottom-[15%] right-[10%] w-24 z-20 icon-float4",
+          "absolute bottom-[20%] sm:bottom-[15%] right-[15%] w-24 z-20 icon-float4",
       },
     ],
   },

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import ProductCard from "../components/ProductCard";
+import ScrollToTop from "../../utility/ScrollToTop";
 
 const PRODUCTS = [
   {
@@ -188,7 +189,6 @@ const PRODUCTS = [
 const Juice = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const productsPerPage = 8;
-
   const totalPages = Math.ceil(PRODUCTS.length / productsPerPage);
   const indexOfLastProduct = currentPage * productsPerPage;
   const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
@@ -210,7 +210,10 @@ const Juice = () => {
 
       <div className="flex justify-center items-center mt-8 gap-4">
         <button
-          onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
+          onClick={() => {
+            setCurrentPage((prev) => Math.max(prev - 1, 1));
+            window.scrollTo({ top: 0, behavior: "smooth" });
+          }}
           disabled={currentPage === 1}
           className="px-4 py-2 bg-orange-300 rounded disabled:opacity-50"
         >
@@ -220,9 +223,10 @@ const Juice = () => {
           Page {currentPage} of {totalPages}
         </span>
         <button
-          onClick={() =>
-            setCurrentPage((prev) => Math.min(prev + 1, totalPages))
-          }
+          onClick={() => {
+            setCurrentPage((prev) => Math.min(prev + 1, totalPages));
+            window.scrollTo({ top: 0, behavior: "smooth" });
+          }}
           disabled={currentPage === totalPages}
           className="px-4 py-2 bg-orange-300 rounded disabled:opacity-50"
         >
