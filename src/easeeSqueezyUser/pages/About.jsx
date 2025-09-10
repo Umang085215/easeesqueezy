@@ -69,14 +69,14 @@ const About = () => {
       <section className=" relative">
         <div className="relative container py-8 sm:py-16 px-6 sm:px-12 md:px-16 overflow-hidden mx-auto">
           <img
-            src="/images/natural.svg"
+            src="/images/about/natural.svg"
             alt="Fruit decoration"
-            className="absolute top-[0.5rem] right-40 w-24 sm:top-[2rem] sm:right-20  md:w-[8rem] natural-ingredients"
+            className="absolute top-[0.5rem] right-40 w-24 sm:top-[2rem] sm:right-20  md:w-[8rem] "
           />
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 items-center mx-auto">
             <div className="relative flex justify-center order-1 md:order-2 md:col-span-1">
-              <img src="/images/c5.png" alt="About Easee Squeezy" />
+              <img src="/images/about/c5.png" alt="About Easee Squeezy" />
             </div>
 
             <div className="order-2 md:order-1 md:col-span-2">

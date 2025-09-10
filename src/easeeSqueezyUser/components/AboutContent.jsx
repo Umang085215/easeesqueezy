@@ -18,7 +18,7 @@ const AboutContent = () => {
       className="relative container py-8 sm:py-16 px-6 sm:px-12 overflow-hidden mx-auto"
     >
       <motion.img
-        src="/images/natural.svg"
+        src="/images/about/natural.svg"
         alt="Fruit decoration"
         className=" absolute top-[0.5rem] right-40 w-16 sm:top-[2rem] sm:right-20 md:w-[8rem]"
         style={{ y }}
@@ -35,7 +35,7 @@ const AboutContent = () => {
           transition={{ duration: 0.8, ease: "easeOut" }}
           viewport={{ once: false }}
         >
-          <img src="/images/c5.png" alt="About Easee Squeezy" />
+          <img src="/images/about/c5.png" alt="About Easee Squeezy" />
         </motion.div>
         <motion.div
           className="order-2 md:order-1 md:col-span-2"

@@ -232,11 +232,11 @@ const Hero = () => {
     <>
       <Swiper
         modules={[Pagination, Autoplay]}
-        loop={true}
-        autoplay={{
-          delay: 5000,
-          disableOnInteraction: false,
-        }}
+        // loop={true}
+        // autoplay={{
+        //   delay: 5000,
+        //   disableOnInteraction: false,
+        // }}
         onSlideChange={(swiper) => setAnimateIndex(swiper.activeIndex)}
       >
         {slides.map((slide, index) => (
@@ -251,28 +251,12 @@ const Hero = () => {
               />
             ))}
 
-            {/* <div
-              className={`relative w-full h-screen min-h-100vh flex justify-center items-center overflow-hidden ${slide.bg}`}
-            >
-              <h1 className="hidden sm:block absolute text-[14vw] sm:text-[10vw] font-extrabold uppercase text-white opacity-90 z-0 leading-none text-center">
-                {slide.title}
-              </h1>
-              <img
-                src={slide.bottle}
-                alt="Juice Bottle"
-                loading="lazy"
-                className="absolute w-[100%] h-[70%] sm:w-[35%] sm:h-[100%] z-20 drop-shadow-2xl animate-floatTilt"
-              />
-              <h1 className="block sm:hidden absolute bottom-20 text-[10vw] font-extrabold uppercase text-white opacity-90 z-30 leading-none text-center">
-                {slide.title}
-              </h1>
-            </div> */}
             <div
               ref={ref}
-              className={`relative w-full h-screen min-h-100vh flex justify-center items-center overflow-hidden ${slide.bg}`}
+              className={`relative w-full h-[70vh] min-h-[50vh] sm:h-[90vh] flex justify-center items-center overflow-hidden ${slide.bg}`}
             >
               <motion.h1
-                className="hidden sm:block absolute text-[14vw] sm:text-[8vw] font-extrabold uppercase text-[#ffffffb5] z-0 leading-none text-center "
+                className=" hidden sm:block absolute text-[14vw] sm:text-[10vw] font-extrabold uppercase text-[#ffffffb5] z-0 leading-none text-center "
                 initial={{ opacity: 0, y: -50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
