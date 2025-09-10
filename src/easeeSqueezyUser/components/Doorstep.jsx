@@ -11,7 +11,7 @@ const Doorstep = () => {
                 <li>
                   <div className="flex items-center">
                     <img
-                      src="/images/juice1.png"
+                      src="/images/juices/juice1.png"
                       alt="Experience"
                       loading="lazy"
                       className="w-\[65px\] h-[70px] -mt-4 -mb-4"
@@ -24,7 +24,7 @@ const Doorstep = () => {
                 <li>
                   <div className="flex items-center">
                     <img
-                      src="/images/juice3.png"
+                      src="/images/juices/juice3.png"
                       alt="Outlets"
                       loading="lazy"
                       className="w-\[65px\] h-[70px] -mt-4 -mb-4"
@@ -37,7 +37,7 @@ const Doorstep = () => {
                 <li>
                   <div className="flex items-center">
                     <img
-                      src="/images/juice4.png"
+                      src="/images/juices/juice4.png"
                       alt="Products"
                       loading="lazy"
                       className="w-\[65px\] h-[70px] -mt-4 -mb-4"
@@ -50,7 +50,7 @@ const Doorstep = () => {
                 <li>
                   <div className="flex items-center">
                     <img
-                      src="/images/juice5.png"
+                      src="/images/juices/juice5.png"
                       alt="Cities"
                       loading="lazy"
                       className="w-[65px] h-[70px] -mt-4 -mb-4"
@@ -63,7 +63,7 @@ const Doorstep = () => {
                 <li>
                   <div className="flex items-center">
                     <img
-                      src="/images/juice6.png"
+                      src="/images/juices/juice6.png"
                       alt="Cities"
                       loading="lazy"
                       className="w-\[65px\] h-[70px] -mt-4 -mb-4"
@@ -76,7 +76,7 @@ const Doorstep = () => {
                 <li>
                   <div className="flex items-center">
                     <img
-                      src="/images/juice1.png"
+                      src="/images/juices/juice1.png"
                       alt="Products"
                       loading="lazy"
                       className="w-\[65px\] h-[70px] -mt-4 -mb-4"
@@ -89,7 +89,7 @@ const Doorstep = () => {
                 <li>
                   <div className="flex items-center">
                     <img
-                      src="/images/juice3.png"
+                      src="/images/juices/juice3.png"
                       alt="Products"
                       loading="lazy"
                       className="w-\[65px\] h-[70px] -mt-4 -mb-4"
@@ -102,7 +102,7 @@ const Doorstep = () => {
                 <li>
                   <div className="flex items-center">
                     <img
-                      src="/images/juice2.png"
+                      src="/images/juices/juice2.png"
                       alt="Products"
                       loading="lazy"
                       className="w-\[65px\] h-[70px] -mt-4 -mb-4"
