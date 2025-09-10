@@ -232,11 +232,11 @@ const Hero = () => {
     <>
       <Swiper
         modules={[Pagination, Autoplay]}
-        // loop={true}
-        // autoplay={{
-        //   delay: 5000,
-        //   disableOnInteraction: false,
-        // }}
+        loop={true}
+        autoplay={{
+          delay: 5000,
+          disableOnInteraction: false,
+        }}
         onSlideChange={(swiper) => setAnimateIndex(swiper.activeIndex)}
       >
         {slides.map((slide, index) => (
