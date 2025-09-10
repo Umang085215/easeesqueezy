@@ -200,7 +200,7 @@ const Footer = () => {
             onClick={handleNewsLetter}
             className="w-max px-2 py-[0.5rem] sm:px-6 sm:py-[1rem] bg-orange-500 text-white flex items-center justify-center rounded-full  "
           >
-            <strong>Subscribe</strong>
+            <strong className="hidden sm:block">Subscribe</strong>
             <IoMdArrowRoundForward size={16} />
           </button>
         </div>
