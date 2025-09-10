@@ -21,9 +21,6 @@ const About = () => {
               </div>
 
               <div className="md:w-1/2 p-6 flex flex-col justify-center">
-                <h2 className="text-2xl font-bold mb-4 text-gray-800">
-                  Delicious Iced Tea
-                </h2>
                 <p className="text-gray-600 mb-4">
                   At <b>Easee Squeezy</b>, our story begins with a personal
                   struggle, the search for real nutrition . Like many, we tried
