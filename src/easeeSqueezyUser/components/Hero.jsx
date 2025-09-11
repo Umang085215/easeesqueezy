@@ -301,7 +301,7 @@ const Hero = () => {
                   transition={{ duration: 1 }}
                   viewport={{ once: false }}
                 >
-                  Delivered to your doorstep daily.
+                  Delivered to your doorstep daily !!
                 </motion.h3>
               </div>
             </div>
