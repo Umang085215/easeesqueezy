@@ -1,4 +1,5 @@
 {
+  "homepage": "https://umang085215.github.io/umang085215.github.io",
   "name": "easeesqueezyjuice",
   "private": true,
   "version": "0.0.0",
@@ -7,7 +8,7 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "deploy": "gh-pages -d dist"
+    "deploy": "vite build && gh-pages -d dist"
   },
   "dependencies": {
     "@easylogic/react-summernote": "^0.1.4",
@@ -17,7 +18,6 @@
     "axios": "^1.11.0",
     "bootstrap": "^5.3.8",
     "framer-motion": "^12.23.12",
-    "gh-pages": "^6.1.1",
     "gsap": "^3.13.0",
     "i": "^0.3.7",
     "jquery": "^3.7.1",
@@ -43,6 +43,7 @@
     "eslint": "^9.33.0",
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-react-refresh": "^0.4.20",
+    "gh-pages": "^6.3.0",
     "globals": "^16.3.0",
     "postcss": "^8.5.6",
     "tailwindcss": "^3.4.17",
