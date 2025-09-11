@@ -253,19 +253,19 @@ const Hero = () => {
 
             <div
               ref={ref}
-              className={`relative w-full h-[70vh] min-h-[50vh] sm:h-[90vh] flex justify-center items-center overflow-hidden ${slide.bg}`}
+              className={`relative w-full h-[80vh] min-h-[50vh] sm:h-[90vh] flex justify-center items-center overflow-hidden ${slide.bg}`}
             >
               <motion.h1
                 className=" hidden sm:block absolute text-[14vw] sm:text-[10vw] font-extrabold uppercase text-[#ffffffb5] z-0 leading-none text-center "
-                initial={{ opacity: 0, y: -50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8 }}
-                viewport={{ once: false }}
+                initial={{ opacity: 0, y: -200, scale: 0.4 }}
+                whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                transition={{ duration: 1, ease: "easeOut" }}
+                viewport={{ once: false, amount: 0.3 }}
               >
                 {slide.title}
               </motion.h1>
               <motion.div
-                initial={{ opacity: 0, y: 200, scale: 0.9 }}
+                initial={{ opacity: 0, y: 200, scale: 0.4 }}
                 whileInView={{ opacity: 1, y: 0, scale: 1 }}
                 transition={{ duration: 1, ease: "easeOut" }}
                 viewport={{ once: false, amount: 0.3 }}
@@ -281,7 +281,7 @@ const Hero = () => {
 
               <motion.h1
                 className="block sm:hidden absolute bottom-20 text-[10vw] font-extrabold uppercase text-[#ffffffb5] z-30 leading-none text-center"
-                initial={{ opacity: 0, y: -50 }}
+                initial={{ opacity: 0, y: -100 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
                 viewport={{ once: false }}

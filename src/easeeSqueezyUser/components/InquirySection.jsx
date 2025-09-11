@@ -1,15 +1,16 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { FaWhatsapp, FaEnvelope } from "react-icons/fa";
+import { motion, useScroll, useTransform } from "framer-motion";
 import axios from "axios";
 
 const InquirySection = () => {
+  const ref = useRef(null);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     phone: "",
     message: "",
   });
-
   const [loading, setLoading] = useState(false);
   const [responseMessage, setResponseMessage] = useState("");
   const [isError, setIsError] = useState(false);
@@ -24,13 +25,18 @@ const InquirySection = () => {
     }
   }, [responseMessage]);
 
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "end start"],
+  });
+  const y = useTransform(scrollYProgress, [0, 1], [0, 80]);
+
   const handleChange = (e) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
     });
   };
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
@@ -88,10 +94,17 @@ const InquirySection = () => {
   return (
     <section
       id="inquiry"
+      ref={ref}
       className="  bg-[url('/images/contactbg.png')] bg-center bg-no-repeat bg-blend-multiply"
     >
       <div className="container mx-auto px-6 sm:px-12 grid grid-cols-1 lg:grid-cols-2 gap-10  pt-0 pb-16 sm:pt-[4rem] items-center">
-        <div className="mobileForm bg-white  shadow-lg rounded-lg px-4 sm:px-8 py-8 order-2 lg:order-1">
+        <motion.div
+          className="mobileForm bg-white  shadow-lg rounded-lg px-4 sm:px-8 py-8 order-2 lg:order-1"
+          initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1.4 }}
+          viewport={{ once: false }}
+        >
           <h2 className="text-2xl md:text-3xl font-bold text-[#134B34] mb-2">
             We Value Your Feedback
           </h2>
@@ -148,13 +161,13 @@ const InquirySection = () => {
               className="md:col-span-2 w-full p-3 border rounded-md bg-gray-100 outline-none"
             ></textarea>
 
-            <button
+            <motion.button
               type="submit"
               disabled={loading}
               className="md:col-span-2 bg-[#FF9300] text-white font-bold py-3 rounded-md hover:bg-orange-600 transition"
             >
               {loading ? "Submitting..." : "SUBMIT"}
-            </button>
+            </motion.button>
           </form>
 
           {responseMessage && (
@@ -166,19 +179,37 @@ const InquirySection = () => {
               {responseMessage} !☺️☺️
             </p>
           )}
-        </div>
+        </motion.div>
 
         <div className="relative pt-0 pb-12 sm:pt-[3rem] flex flex-col justify-between h-full order-1 lg:order-2">
           <div className="z-30">
-            <h3 className="order_title text-4xl font-extrabold text-[#CA9D15] mb-3">
+            <motion.h3
+              className="order_title text-4xl font-extrabold text-[#CA9D15] mb-3"
+              initial={{ opacity: 0, y: -50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1.2 }}
+              viewport={{ once: false }}
+            >
               Want Juice ? We Got You !
-            </h3>
-            <p className="text-gray-700 mb-6 max-w-md">
+            </motion.h3>
+            <motion.p
+              className="text-gray-700 mb-6 max-w-md"
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 1.1 }}
+              viewport={{ once: false }}
+            >
               Slide into our WhatsApp or drop us an email to place your order.
               It’s that simple.
-            </p>
+            </motion.p>
 
-            <div className="flex flex-col gap-4 mb-5">
+            <motion.div
+              className="flex flex-col gap-4 mb-5"
+              initial={{ opacity: 0, scale: 0.5 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 1.2 }}
+              viewport={{ once: false }}
+            >
               <div className="w-max flex items-center gap-3 bg-[#E8C044] px-4 py-2 rounded-full text-white font-bold shadow">
                 <FaWhatsapp className="text-xl text-green-700" />
                 <span>+91 84900-91122</span>
@@ -187,13 +218,20 @@ const InquirySection = () => {
                 <FaEnvelope className="text-xl" />
                 <span>easeesqueezy@gmail.com</span>
               </div>
-            </div>
+            </motion.div>
             <p className="text-gray-700 mb-6 max-w-md ">
               🚚 Fresh juice, straight to your door — no hassle, just health!
             </p>
           </div>
 
-          <div className="absolute -bottom-[140px] right-[0px] lg:bottom-[0px] lg:right-[20px] flex items-center justify-center lg:justify-start z-0">
+          <motion.div
+            className="absolute -bottom-[140px] right-[0px] lg:bottom-[0px] lg:right-[20px] flex items-center justify-center lg:justify-start z-0"
+            style={{ y }}
+            initial={{ opacity: 0, scale: 0.4 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1 }}
+            viewport={{ once: false }}
+          >
             <img
               src="/images/contact1.png"
               alt="Oranges"
@@ -206,7 +244,7 @@ const InquirySection = () => {
               loading="lazy"
               className="w-full -ml-[6rem] sm:-ml-[8rem] z-20 drop-shadow-2xl h-[300px] sm:h-[400px]"
             />
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { motion } from "framer-motion";
 import ProductCard from "../components/ProductCard";
 
 const PRODUCTS = [
@@ -203,20 +204,35 @@ const Juice = () => {
 
   return (
     <div className="w-full px-6 sm:px-12 container mx-auto py-6">
-      <h2 className="my-10 text-center text-3xl font-bold text-[#003b19]">
+      <motion.h2
+        className="my-10 text-center text-3xl font-bold text-[#003b19]"
+        initial={{ opacity: 0, scale: 0.4 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 1 }}
+        viewport={{ once: false }}
+      >
         OUR JUICES
-      </h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10">
+      </motion.h2>
+      <motion.div
+        className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10"
+        initial={{ opacity: 0, scale: 0.4 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        transition={{
+          duration: 1,
+          ease: [0.25, 0.1, 0.25, 1],
+        }}
+        viewport={{ once: false }}
+      >
         {currentProducts.map((p, index) => (
           <ProductCard key={index} product={p} />
         ))}
-      </div>
+      </motion.div>
 
       <div className="flex justify-center items-center mt-8 gap-4">
         <button
           onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
           disabled={currentPage === 1}
-          className="px-4 py-2 bg-orange-300 rounded disabled:opacity-50"
+          className="px-4 py-2 text-white bg-[#0e4c45] rounded disabled:opacity-50"
         >
           Prev
         </button>
@@ -228,7 +244,7 @@ const Juice = () => {
             setCurrentPage((prev) => Math.min(prev + 1, totalPages))
           }
           disabled={currentPage === totalPages}
-          className="px-4 py-2 bg-orange-300 rounded disabled:opacity-50"
+          className="px-4 py-2 text-white bg-[#0e4c45] rounded disabled:opacity-50"
         >
           Next
         </button>

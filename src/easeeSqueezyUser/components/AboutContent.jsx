@@ -5,7 +5,6 @@ import { motion, useScroll, useTransform } from "framer-motion";
 const AboutContent = () => {
   const navigate = useNavigate();
   const ref = useRef(null);
-
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start end", "end start"],

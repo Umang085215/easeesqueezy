@@ -1,8 +1,10 @@
+import React, { useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import { ArrowLeft, ArrowRight } from "lucide-react";
+import { motion, useScroll, useTransform } from "framer-motion";
 import JuiceCard from "./JuiceCard";
 
 const products = [
@@ -190,19 +192,40 @@ const products = [
 ];
 
 const ProductShowcase = () => {
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "end start"],
+  });
+  const y = useTransform(scrollYProgress, [0, 1], [0, 80]);
   return (
-    <section className="relative container px-6 sm:px-12 mx-auto mt-0 pb-10 pt-10 text-center overflow-hidden">
+    <section
+      ref={ref}
+      className="relative container px-6 sm:px-12 mx-auto mt-0 pb-10 pt-10 text-center overflow-hidden"
+    >
       <div
         className="absolute top-0 left-0 w-full h-full bg-cover bg-center bg-no-repeat blur-sm"
         style={{ backgroundImage: "url('/images/products/productBg1.jpg')" }}
       ></div>
       <div className="relative z-10">
-        <h1 className="text-3xl md:text-4xl font-extrabold text-[#0E4C45] px-3">
+        <motion.h1
+          className="text-3xl md:text-4xl font-extrabold text-[#0E4C45] px-3"
+          initial={{ opacity: 0, y: -50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: false }}
+        >
           JUICE PARADISE
-        </h1>
-        <p className="text-gray-600 mt-2 mb-8 px-3">
+        </motion.h1>
+        <motion.p
+          className="text-gray-600 mt-2 mb-8 px-3"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: false }}
+        >
           Enjoy our take on the classic flavors you know and love.
-        </p>
+        </motion.p>
 
         <div className="relative mb-10 mt-10 ">
           <Swiper
@@ -228,7 +251,13 @@ const ProductShowcase = () => {
           >
             {products.map((product, i) => (
               <SwiperSlide key={i} className="flex justify-center">
-                <div className="w-[260px]">
+                <motion.div
+                  className="w-[260px]"
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  transition={{ duration: 1 }}
+                  viewport={{ once: false }}
+                >
                   {" "}
                   <JuiceCard
                     img={product.img}
@@ -236,7 +265,7 @@ const ProductShowcase = () => {
                     des={product.description}
                     bg={product.bg}
                   />
-                </div>
+                </motion.div>
               </SwiperSlide>
             ))}
           </Swiper>

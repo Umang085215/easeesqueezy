@@ -7,6 +7,10 @@ const Header = () => {
   const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(false);
 
+  const closeMenu = () => {
+    setIsOpen(false);
+  };
+
   return (
     <header className="bg-white text-[#003c17] shadow-md fixed top-0 left-0 w-full z-50">
       <StickyHeader />
@@ -63,7 +67,7 @@ const Header = () => {
         {/* Right Content */}
         <div className="flex items-center gap-5">
           <button
-            className="md:hidden"
+            className="md:hidden "
             onClick={() => setIsOpen(!isOpen)}
             aria-label="Toggle Menu"
           >
@@ -77,21 +81,33 @@ const Header = () => {
         className={`fixed top-0 right-0 h-full w-64 bg-white shadow-lg transform transition-transform duration-300 ease-in-out z-40
           ${isOpen ? "translate-x-0" : "translate-x-full"}`}
       >
-        <div className="flex flex-col p-6 space-y-6 text-lg font-[500]">
+        <div className="flex flex-col p-6 space-y-4 text-md font-[500]">
           <button
             className="self-end"
-            onClick={() => setIsOpen(false)}
+            onClick={closeMenu}
             aria-label="Close Menu"
           >
             <X size={28} />
           </button>
-          <Link to="/" onClick={() => setIsOpen(false)}>
+          <Link
+            to="/"
+            onClick={closeMenu}
+            className="border-b-[1px] border-b-gray-500"
+          >
             Home
           </Link>
-          <Link to="/about" onClick={() => setIsOpen(false)}>
+          <Link
+            to="/about"
+            onClick={closeMenu}
+            className="border-b-[1px] border-b-gray-500"
+          >
             About-Us
           </Link>
-          <Link to="/juices" onClick={() => setIsOpen(false)}>
+          <Link
+            to="/juices"
+            onClick={closeMenu}
+            className="border-b-[1px] border-b-gray-500"
+          >
             Juices & Fruit-Box
           </Link>
           <Link
@@ -105,6 +121,7 @@ const Header = () => {
               }, 100);
               setIsOpen(false);
             }}
+            className="border-b-[1px] border-b-gray-500"
           >
             Contact
           </Link>
@@ -114,7 +131,7 @@ const Header = () => {
       {isOpen && (
         <div
           className="fixed inset-0 bg-black bg-opacity-40 z-30"
-          onClick={() => setIsOpen(false)}
+          onClick={closeMenu}
         />
       )}
     </header>

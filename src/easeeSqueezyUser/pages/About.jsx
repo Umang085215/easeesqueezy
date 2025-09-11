@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 const About = () => {
   return (
@@ -10,7 +11,13 @@ const About = () => {
             <span className="text-[#003a19]">Easeé Squéézy</span>
           </h2>
 
-          <div className="max-w-5xl mx-auto my-10  shadow-lg rounded-lg ">
+          <motion.div
+            className="max-w-5xl mx-auto my-10  shadow-lg rounded-lg "
+            initial={{ opacity: 0, scale: 0.4 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1.5 }}
+            viewport={{ once: false }}
+          >
             <div className="flex flex-col md:flex-row">
               <div className="md:w-1/2">
                 <img
@@ -33,9 +40,15 @@ const About = () => {
                 <h3>Jyoti M</h3>
               </div>
             </div>
-          </div>
+          </motion.div>
 
-          <div className="max-w-5xl mx-auto my-10  shadow-lg rounded-lg ">
+          <motion.div
+            className="max-w-5xl mx-auto my-10  shadow-lg rounded-lg "
+            initial={{ opacity: 0, scale: 0.4 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1.5 }}
+            viewport={{ once: false }}
+          >
             <div className="flex flex-col md:flex-row">
               <div className="md:w-1/2 p-6 flex flex-col justify-center">
                 <p className="text-gray-600 mb-4">
@@ -60,7 +73,7 @@ const About = () => {
                 />
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </section>
       <section className=" relative">
