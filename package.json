@@ -1,5 +1,4 @@
 {
-  "homepage": "https://umang085215.github.io/umang085215.github.io",
   "name": "easeesqueezyjuice",
   "private": true,
   "version": "0.0.0",
@@ -8,7 +7,7 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "deploy": "vite build && gh-pages -d dist"
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@easylogic/react-summernote": "^0.1.4",
