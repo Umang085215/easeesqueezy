@@ -292,7 +292,7 @@ const Hero = () => {
                   transition={{ duration: 0.7 }}
                   viewport={{ once: false }}
                 >
-                  Fresh, Healthy, and Natural Juices🥤🥤
+                  Fresh, Healthy, and Natural Juices
                 </motion.h2>
                 <motion.h3
                   className="font-semibold text-sm sm:text-base md:text-xl text-green-800"
