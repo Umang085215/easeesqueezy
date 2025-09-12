@@ -12,7 +12,7 @@ const PreLoader = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setIndex((prev) => (prev + 1) % fruits.length);
-    }, 400);
+    }, 700);
     return () => clearInterval(interval);
   }, []);
   return (
