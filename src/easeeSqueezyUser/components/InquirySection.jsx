@@ -95,7 +95,7 @@ const InquirySection = () => {
     <section
       id="inquiry"
       ref={ref}
-      className="  bg-[url('/images/contactbg.png')] bg-center bg-no-repeat bg-blend-multiply"
+      className="  bg-[url('/images/contactbg.webp')] bg-center bg-no-repeat bg-blend-multiply"
     >
       <div className="container mx-auto px-6 sm:px-12 grid grid-cols-1 lg:grid-cols-2 gap-10  pt-0 pb-16 sm:pt-[4rem] items-center">
         <motion.div
@@ -233,13 +233,13 @@ const InquirySection = () => {
             viewport={{ once: false }}
           >
             <img
-              src="/images/contact1.png"
+              src="/images/contact1.webp"
               alt="Oranges"
               loading="lazy"
               className="w-80 md:w-48 lg:w-60 relative z-10 drop-shadow-2xl h-[250px] sm:h-[300px]"
             />
             <img
-              src="/images/sliderBottels/mango.png"
+              src="/images/sliderBottels/mango.webp"
               alt="Juice Bottle"
               loading="lazy"
               className="w-full -ml-[6rem] sm:-ml-[8rem] z-20 drop-shadow-2xl h-[300px] sm:h-[400px]"

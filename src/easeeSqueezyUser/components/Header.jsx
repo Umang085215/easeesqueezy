@@ -21,7 +21,7 @@ const Header = () => {
           onClick={() => navigate("/")}
         >
           <img
-            src="/images/new_logo.png"
+            src="/images/new_logo.webp"
             alt="Easee Squeezy"
             loading="lazy"
             className="w-24 max-w-full h-auto"

@@ -96,7 +96,7 @@ const AdminLogin = () => {
       </div>
       <div className="absolute left-10 top-10 flex  justify-center  z-10">
         <img
-          src="/images/new_logo.png"
+          src="/images/new_logo.webp"
           alt="admin logo"
           className="w-24 sm:w-36"
         />

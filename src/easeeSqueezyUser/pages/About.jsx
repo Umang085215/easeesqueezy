@@ -21,7 +21,7 @@ const About = () => {
             <div className="flex flex-col md:flex-row">
               <div className="md:w-1/2">
                 <img
-                  src="/images/whyeasee/jm.jpg"
+                  src="/images/whyeasee/jm.webp"
                   alt="Placeholder image"
                   className="w-full h-full object-cover rounded-full"
                 />
@@ -67,7 +67,7 @@ const About = () => {
 
               <div className="md:w-1/2">
                 <img
-                  src="/images/whyeasee/cp.jpg"
+                  src="/images/whyeasee/cp.webp"
                   alt="Placeholder image"
                   className=" object-cover rounded-full"
                 />
@@ -86,7 +86,7 @@ const About = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 items-center mx-auto">
             <div className="relative flex justify-center order-1 md:order-2 md:col-span-1">
-              <img src="/images/about/c5.png" alt="About Easee Squeezy" />
+              <img src="/images/about/c5.webp" alt="About Easee Squeezy" />
             </div>
 
             <div className="order-2 md:order-1 md:col-span-2">
@@ -106,7 +106,7 @@ const About = () => {
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 text-center md:text-left mb-10">
                 <div>
                   <img
-                    src="/images/about/i1.png"
+                    src="/images/about/i1.webp"
                     alt="Completely Healthy"
                     className="w-20 sm:w-[3rem] mb-2 mx-auto md:mx-0"
                   />
@@ -120,7 +120,7 @@ const About = () => {
 
                 <div>
                   <img
-                    src="/images/about/i2.png"
+                    src="/images/about/i2.webp"
                     alt="Fresh Organic Fruits"
                     className="w-20 sm:w-[3rem] mb-2 mx-auto md:mx-0"
                   />
@@ -135,7 +135,7 @@ const About = () => {
 
                 <div>
                   <img
-                    src="/images/about/i3.png"
+                    src="/images/about/i3.webp"
                     alt="Serving Hygenic"
                     className="w-20 sm:w-[3rem] mb-2 mx-auto md:mx-0"
                   />
@@ -149,7 +149,7 @@ const About = () => {
 
                 <div>
                   <img
-                    src="/images/about/i4.png"
+                    src="/images/about/i4.webp"
                     alt="Serving Hygenic"
                     className="w-20 sm:w-[3rem] mb-2 mx-auto md:mx-0"
                   />
@@ -163,7 +163,7 @@ const About = () => {
 
                 <div>
                   <img
-                    src="/images/about/i5.png"
+                    src="/images/about/i5.webp"
                     alt="Serving Hygenic"
                     className="w-20 sm:w-[3rem] mb-2 mx-auto md:mx-0"
                   />
@@ -176,7 +176,7 @@ const About = () => {
                 </div>
                 <div>
                   <img
-                    src="/images/about/i6.png"
+                    src="/images/about/i6.webp"
                     alt="Serving Hygenic"
                     className="w-20 sm:w-[3rem] mb-2 mx-auto md:mx-0"
                   />

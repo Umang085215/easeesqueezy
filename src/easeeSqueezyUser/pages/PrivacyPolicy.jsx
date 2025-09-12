@@ -8,7 +8,7 @@ const PrivacyPolicy = () => {
       <div className="space-y-4 ">
         <div className=" z-30 cursor-pointer" onClick={() => navigate("/")}>
           <img
-            src="/images/new_logo.png"
+            src="/images/new_logo.webp"
             alt="Easee Squeezy"
             className="w-36 max-w-full h-auto"
           />

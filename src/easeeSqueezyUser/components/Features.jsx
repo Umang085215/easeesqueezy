@@ -3,27 +3,27 @@ import React from "raect";
 const Features = () => {
   const features = [
     {
-      icon: "/images/about/i1.png",
+      icon: "/images/about/i1.webp",
       text: "Nutrient-Rich & Antioxidant-Packed",
     },
     {
-      icon: "/images/about/i2.png",
+      icon: "/images/about/i2.webp",
       text: "Pure & Preservative-Free",
     },
     {
-      icon: "/images/about/i3.png",
+      icon: "/images/about/i3.webp",
       text: "Supports Digestion & Detox",
     },
     {
-      icon: "/images/about/i4.png",
+      icon: "/images/about/i4.webp",
       text: "Instant Natural Energy",
     },
     {
-      icon: "/images/about/i5.png",
+      icon: "/images/about/i5.webp",
       text: "Freshly Cold-Pressed Daily",
     },
     {
-      icon: "/images/about/i6.png",
+      icon: "/images/about/i6.webp",
       text: "Sugar-Free",
     },
   ];

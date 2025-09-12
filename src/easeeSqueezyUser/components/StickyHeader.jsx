@@ -5,7 +5,7 @@ const StickyHeader = () => {
   return (
     <section className="bg-yellow-400 text-[#003a19] overflow-hidden">
       <div className="container m-auto py-2 pr-6 sm:pr-12 flex items-center justify-between">
-        <div className="relative w-[100%] sm:w-[80%] overflow-hidden">
+        <div className="relative w-[100%]  overflow-hidden">
           <div className="flex whitespace-nowrap   animate-marquee ">
             <p className=" text-base leading-[1.5] font-bold font-[Manrope,sans-serif]">
               Welcome to Easee Squeezy – Where Freshness Meets Flavor! Discover

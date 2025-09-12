@@ -91,7 +91,7 @@
 //                           {p.image ? (
 //                             <img
 //                               src={`https://devshub.easeesqueezy.com/easeesqueezy_backend/writable/uploads/${p.image}`}
-//                               // src="/adminImages/d1.png"
+//                               // src="/adminImages/d1.webp"
 //                               alt={p.name}
 //                               className="w-[50px] h-[50px] object-cover rounded"
 //                             />

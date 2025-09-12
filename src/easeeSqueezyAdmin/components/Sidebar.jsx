@@ -25,7 +25,7 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
         {isOpen ? (
           <span className="w-full flex items-center justify-center ">
             <img
-              src="/adminImages/new_logo.png"
+              src="/adminImages/new_logo.webp"
               alt="sidebar logo"
               className="w-36 h-12 m-0"
             />
@@ -33,7 +33,7 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
         ) : (
           <div className="w-24">
             <img
-              src="/images/new_logo.png"
+              src="/images/new_logo.webp"
               alt="sidebar logo"
               className="w-full m-0"
             />

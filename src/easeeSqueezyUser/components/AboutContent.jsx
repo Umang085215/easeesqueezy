@@ -34,7 +34,7 @@ const AboutContent = () => {
           transition={{ duration: 0.8, ease: "easeOut" }}
           viewport={{ once: false }}
         >
-          <img src="/images/about/c5.png" alt="About Easee Squeezy" />
+          <img src="/images/about/c5.webp" alt="About Easee Squeezy" />
         </motion.div>
         <motion.div
           className="order-2 md:order-1 md:col-span-2"
@@ -82,32 +82,32 @@ const AboutContent = () => {
           >
             {[
               {
-                img: "/images/about/i1.png",
+                img: "/images/about/i1.webp",
                 title: "Nutrient-Rich",
                 desc: "Packed with vital nutrients to fuel your everyday health.",
               },
               {
-                img: "/images/about/i2.png",
+                img: "/images/about/i2.webp",
                 title: "Pure & Preservative-Free",
                 desc: "Nothing artificial—just clean, natural, and honest ingredients.",
               },
               {
-                img: "/images/about/i3.png",
+                img: "/images/about/i3.webp",
                 title: "Supports Digestion & Detox",
                 desc: "Cleanses your system and aids healthy digestion naturally.",
               },
               {
-                img: "/images/about/i4.png",
+                img: "/images/about/i4.webp",
                 title: "Instant Natural Energy",
                 desc: "Feel refreshed and energized with every nutritious sip.",
               },
               {
-                img: "/images/about/i5.png",
+                img: "/images/about/i5.webp",
                 title: "Freshly Cold-Pressed Daily",
                 desc: "Pressed fresh each day to lock in nutrients.",
               },
               {
-                img: "/images/about/i6.png",
+                img: "/images/about/i6.webp",
                 title: "Sugar-Free",
                 desc: "Naturally sweet, with zero added sugars or guilt.",
               },

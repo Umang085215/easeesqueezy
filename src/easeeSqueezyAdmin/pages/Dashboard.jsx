@@ -42,27 +42,27 @@ const Dashboard = () => {
           title="Total Orders"
           value="2.5K"
           ratio="10% Increase"
-          img="d1.png"
+          img="d1.webp"
           color="green"
         />
         <DashboardCard
           title="Total Sales"
           value="5.2k"
           ratio="5% Increase"
-          img="d2.png"
+          img="d2.webp"
           color="green"
         />
         <DashboardCard
           title="Customers"
           value="25k"
           ratio="2% Decrese"
-          img="d4.png"
+          img="d4.webp"
           color="red"
         />
         <DashboardCard
           title="People Online"
           value="8"
-          img="d3.png"
+          img="d3.webp"
           color="green"
         />
       </div>
