@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
-import Home from "./easeeSqueezyUser/pages/Home";
 import Routers from "./routers/Routers";
-import PreLoader from "./easeeSqueezyUser/components/loaders/Preloader";
+import PreLoader from "./easeeSqueezyUser/components/loaders/PreLoader";
 
 const App = () => {
   const [loading, setLoading] = useState(true);
