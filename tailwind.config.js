@@ -4,6 +4,17 @@ export default {
 
   theme: {
     extend: {
+      colors: {
+        DEFAULT: "#0E4C45",
+        success: "#0E4C45",
+        success_hover: "#067c39",
+        light_red: "#f3534d",
+        light_orange: "#eb713e",
+        light_brown: "#e7a956",
+        light_green: "#cee569",
+        light_pink: "#f268a5",
+        light_yellow: "#f8de62",
+      },
       keyframes: {
         bounceSmooth: {
           "0%, 100%": { transform: "translateY(0)" },
@@ -14,6 +25,9 @@ export default {
         bounceSmooth: "bounceSmooth 1.5s infinite ease-in-out",
       },
     },
+    plugins: [],
+    future: {
+      hoverOnlyWhenSupported: true,
+    },
   },
-  plugins: [],
 };

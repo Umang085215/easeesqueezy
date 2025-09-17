@@ -12,7 +12,7 @@ const testimonials = [
     name: "Aakash P",
     feedback:
       "I absolutely love Easee Squeezy juices! The flavors are always fresh, and I can tell they use real fruits without any added preservatives. It’s become my daily energy booster.",
-    image: "/images/user.webp",
+
     rating: 4,
   },
   {
@@ -21,7 +21,7 @@ const testimonials = [
 
     feedback:
       "Ordering from Easee Squeezy has been such a pleasant experience. The delivery is quick, the bottles are neatly packed, and the mango juice tastes exactly like biting into a fresh mango.",
-    image: "/images/user.webp",
+
     rating: 3,
   },
   {
@@ -30,7 +30,7 @@ const testimonials = [
 
     feedback:
       "As someone who avoids sugary drinks, I’m so glad I found this service. Their cold-pressed juices taste natural and keep me refreshed after a workout. Highly recommend!  ",
-    image: "/images/user.webp",
+
     rating: 4,
   },
   {
@@ -38,7 +38,7 @@ const testimonials = [
     name: "Yash K",
     feedback:
       "Easee Squeezy makes healthy living simple. The kiwi blend is my favorite—it’s tangy, refreshing, and feels like a treat without the guilt.",
-    image: "/images/user.webp",
+
     rating: 4,
   },
   {
@@ -47,7 +47,7 @@ const testimonials = [
 
     feedback:
       "I ordered a variety pack to try different flavors, and every single one was delicious. My kids also loved the orange juice—finally, a healthy option they genuinely enjoy.",
-    image: "/images/user.webp",
+
     rating: 4,
   },
 ];
@@ -56,7 +56,7 @@ const Testimonial = () => {
   return (
     <section className=" py-12">
       <div className="relative container w-full px-6 sm:px-12 mx-auto text-center">
-        <h1 className="text-3xl md:text-4xl font-extrabold text-[#0E4C45] px-3 mb-10">
+        <h1 className="text-3xl md:text-4xl font-extrabold text-success px-3 mb-10">
           What Our Happy Customers Are Saying
         </h1>
 
@@ -69,19 +69,21 @@ const Testimonial = () => {
           effect="coverflow"
           coverflowEffect={{
             rotate: 20,
-            stretch: 50,
-            depth: 200,
+            stretch: 0,
+            depth: 50,
             modifier: 1,
             slideShadows: true,
           }}
-          loop={true}
+          loop
           autoplay={{
-            delay: 1500,
-            disableOnInteraction: true,
+            delay: 1000,
+            disableOnInteraction: false,
           }}
-          centeredSlides={true}
-          // slidesPerView="auto"
+          centeredSlides
+          slidesPerView="auto"
           spaceBetween={0}
+          preloadImages={false}
+          lazy={true}
           breakpoints={{
             0: { slidesPerView: 1 },
             640: { slidesPerView: 2 },
@@ -89,7 +91,7 @@ const Testimonial = () => {
           }}
         >
           {testimonials.map((testimonial) => (
-            <SwiperSlide key={testimonial.id} className="w-[250px]">
+            <SwiperSlide key={testimonial.id}>
               <TestimonialCard testimonial={testimonial} />
             </SwiperSlide>
           ))}

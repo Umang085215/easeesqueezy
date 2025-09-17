@@ -17,7 +17,7 @@ const PreLoader = () => {
   }, []);
   return (
     <div
-      className="flex flex-col justify-center items-center h-screen w-screen"
+      className="flex flex-col justify-center items-center h-screen w-screen overflow-hidden"
       style={{
         backgroundImage: "radial-gradient(circle at center, #e1f58c, #758e18)",
       }}

@@ -4,210 +4,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
-
-const slides = [
-  {
-    title: "C-Rich-Orange",
-    bottle: "/images/sliderBottels/orange.webp",
-    bg: "bg-[radial-gradient(circle_at_center,_#f5b066,_#ef7c00)]",
-    fruitIcons: [
-      {
-        src: "/images/fruitIcons/o1.webp",
-        className: "absolute top-[10%] left-[20%] w-20 z-20 icon-float1",
-      },
-      {
-        src: "/images/fruitIcons/o5.webp",
-        className: "absolute top-[45%] left-[10%] w-20 z-20 icon-float2",
-      },
-      {
-        src: "/images/fruitIcons/leaf1.webp",
-        className:
-          "absolute bottom-[20%] left-[10%] sm:bottom-[15%] sm:left-[20%] w-20 z-20 icon-float3",
-      },
-      {
-        src: "/images/fruitIcons/leaf2.webp",
-        className: "absolute top-[10%] right-[20%] w-24 z-20 icon-float4",
-      },
-      {
-        src: "/images/fruitIcons/o4.webp",
-        className:
-          "absolute top-[40%] right-[5%] sm:top-[50%] sm:right-[10%] w-24 z-20 icon-float2",
-      },
-      {
-        src: "/images/fruitIcons/o2.webp",
-        className:
-          " absolute bottom-[20%] sm:bottom-[15%] right-[15%] w-24 z-20 icon-float4",
-      },
-    ],
-  },
-  {
-    title: "Mango & Pineapple",
-    bottle: "/images/sliderBottels/mango.webp",
-    bg: "bg-[radial-gradient(circle_at_center,_#fdd566,_#fbb900)]",
-    fruitIcons: [
-      {
-        src: "/images/fruitIcons/m8.webp",
-        className: "absolute top-[10%] left-[20%] w-24 z-20 icon-float1",
-      },
-      {
-        src: "/images/fruitIcons/p1.webp",
-        className: "absolute top-[45%] left-[10%] w-24 z-20 icon-float2",
-      },
-      {
-        src: "/images/fruitIcons/leaf2.webp",
-        className: "absolute top-[10%] right-[20%] w-24 z-20 icon-float4",
-      },
-      {
-        src: "/images/fruitIcons/leaf1.webp",
-        className:
-          "absolute bottom-[20%] left-[10%] sm:bottom-[15%] sm:left-[20%] w-20 z-20 icon-float3",
-      },
-      {
-        src: "/images/fruitIcons/m4.webp",
-        className:
-          "absolute top-[40%] right-[5%] sm:top-[50%] sm:right-[10%] w-20 z-20 icon-float2",
-      },
-      {
-        src: "/images/fruitIcons/p5.webp",
-        className:
-          "absolute bottom-[20%] sm:bottom-[15%] right-[15%] w-24 z-20 icon-float4",
-      },
-    ],
-  },
-  {
-    title: "Kiwi Collagen Helper",
-    bottle: "/images/sliderBottels/kiwi.webp",
-    bg: "bg-[radial-gradient(circle_at_center,_#e1f58c,_#758e18)]",
-    fruitIcons: [
-      {
-        src: "/images/fruitIcons/k1.webp",
-        className: "absolute top-[10%] left-[20%] w-24 z-20 icon-float1",
-      },
-      {
-        src: "/images/fruitIcons/k3.webp",
-        className: "absolute top-[45%] left-[10%] w-36 z-20 icon-float2",
-      },
-      {
-        src: "/images/fruitIcons/leaf2.webp",
-        className: "absolute top-[10%] right-[20%] w-24 z-20 icon-float4",
-      },
-      {
-        src: "/images/fruitIcons/leaf1.webp",
-        className:
-          "absolute bottom-[20%] left-[10%] sm:bottom-[15%] sm:left-[20%] w-20 z-20 icon-float3",
-      },
-      {
-        src: "/images/fruitIcons/k10.webp",
-        className:
-          "absolute top-[40%] right-[5%] sm:top-[50%] sm:right-[10%] w-24 z-20 icon-float2",
-      },
-      {
-        src: "/images/fruitIcons/k9.webp",
-        className:
-          "absolute bottom-[20%] sm:bottom-[15%] right-[15%] w-24 z-20 icon-float4",
-      },
-    ],
-  },
-  {
-    title: "Tomato Lycopene Shield",
-    bottle: "/images/sliderBottels/tomato.webp",
-    bg: "bg-[radial-gradient(circle_at_center,_#ed9b8d,_#e2615b)]",
-    fruitIcons: [
-      {
-        src: "/images/fruitIcons/tomato1.webp",
-        className: "absolute top-[10%] left-[20%] w-24 z-20 icon-float1",
-      },
-      {
-        src: "/images/fruitIcons/tomato2.webp",
-        className: "absolute top-[45%] left-[10%] w-36 z-20 icon-float2",
-      },
-      {
-        src: "/images/fruitIcons/leaf2.webp",
-        className: "absolute top-[10%] right-[20%] w-24 z-20 icon-float4",
-      },
-      {
-        src: "/images/fruitIcons/leaf1.webp",
-        className:
-          "absolute bottom-[20%] left-[10%] sm:bottom-[15%] sm:left-[20%] w-20 z-20 icon-float3",
-      },
-      {
-        src: "/images/fruitIcons/tomato3.webp",
-        className:
-          "absolute top-[40%] right-[5%] sm:top-[50%] sm:right-[10%] w-24 z-20 icon-float2",
-      },
-      {
-        src: "/images/fruitIcons/tomato1.webp",
-        className:
-          "absolute bottom-[20%] sm:bottom-[15%] right-[15%] w-24 z-20 icon-float4",
-      },
-    ],
-  },
-  {
-    title: "Spearmint Cooling Juice",
-    bottle: "/images/sliderBottels/kiwi.webp",
-    bg: "bg-[radial-gradient(circle_at_center,_#e1f58c,_#758e18)]",
-    fruitIcons: [
-      {
-        src: "/images/fruitIcons/s1.webp",
-        className: "absolute top-[10%] left-[20%] w-24 z-20 icon-float1",
-      },
-      {
-        src: "/images/fruitIcons/s2.webp",
-        className: "absolute top-[45%] left-[10%] w-36 z-20 icon-float2",
-      },
-      {
-        src: "/images/fruitIcons/leaf2.webp",
-        className: "absolute top-[10%] right-[20%] w-24 z-20 icon-float4",
-      },
-      {
-        src: "/images/fruitIcons/leaf1.webp",
-        className:
-          "absolute bottom-[20%] left-[10%] sm:bottom-[15%] sm:left-[20%] w-20 z-20 icon-float3",
-      },
-      {
-        src: "/images/fruitIcons/s3.webp",
-        className:
-          "absolute top-[40%] right-[5%] sm:top-[50%] sm:right-[10%] w-24 z-20 icon-float2",
-      },
-      {
-        src: "/images/fruitIcons/s1.webp",
-        className:
-          "absolute bottom-[20%] sm:bottom-[15%] right-[15%] w-24 z-20 icon-float4",
-      },
-    ],
-  },
-  // {
-  //   title: "Blueberry-Watermelon ",
-  //   bottle: "/images/sliderBottels/blueberry.webp",
-  //   bg: "bg-[radial-gradient(circle_at_center,_#a7c8e0,_#6da4cb)]",
-  //   fruitIcons: [
-  //     {
-  //       src: "/images/fruitIcons/b4.webp",
-  //       className: "absolute top-[5%] left-[10%] w-36 z-20 icon-float1",
-  //     },
-  //     {
-  //       src: "/images/fruitIcons/b5.webp",
-  //       className: "absolute top-[45%] left-[8%] w-24 z-20 icon-float2",
-  //     },
-  //     {
-  //       src: "/images/fruitIcons/leaf2.webp",
-  //       className: "absolute bottom-[10%] left-[15%] w-24 z-20 icon-float3",
-  //     },
-  //     {
-  //       src: "/images/fruitIcons/leaf1.webp",
-  //       className: "absolute top-[10%] right-[15%] w-24 z-20 icon-float4",
-  //     },
-  //     {
-  //       src: "/images/fruitIcons/b6.webp",
-  //       className: "absolute top-[50%] right-[8%] w-36 z-20 icon-float1",
-  //     },
-  //     {
-  //       src: "/images/fruitIcons/b4.webp",
-  //       className: "absolute bottom-[10%] right-[15%] w-24 z-20 icon-float2",
-  //     },
-  //   ],
-  // },
-];
+import heroSlider from "../data/products/heroSlider";
 
 const Hero = () => {
   const ref = useRef(null);
@@ -227,13 +24,15 @@ const Hero = () => {
       <Swiper
         modules={[Pagination, Autoplay]}
         loop={true}
+        preloadImages={false}
+        lazy={true}
         autoplay={{
-          delay: 5000,
+          delay: 3000,
           disableOnInteraction: false,
         }}
         onSlideChange={(swiper) => setAnimateIndex(swiper.activeIndex)}
       >
-        {slides.map((slide, index) => (
+        {heroSlider.map((slide, index) => (
           <SwiperSlide key={index}>
             {slide.fruitIcons.map((fruit, i) => (
               <img
@@ -247,7 +46,7 @@ const Hero = () => {
 
             <div
               ref={ref}
-              className={`relative w-full h-[80vh] min-h-[50vh] sm:h-[90vh] flex justify-center items-center overflow-hidden ${slide.bg}`}
+              className={`relative w-full  min-h-[80vh] sm:h-[90vh] flex justify-center items-center overflow-hidden ${slide.bg}`}
             >
               <motion.h1
                 className=" hidden sm:block absolute text-[14vw] sm:text-[10vw] font-extrabold uppercase text-[#ffffffb5] z-0 leading-none text-center "

@@ -42,16 +42,12 @@ const InquirySection = () => {
     setLoading(true);
     setResponseMessage("");
     setIsError(false);
-
-    // --- Email validation ---
     if (!formData.email.trim()) {
       setResponseMessage("Email is required!");
       setIsError(true);
       setLoading(false);
       return;
     }
-
-    // --- Phone validation ---
     if (!formData.phone.trim()) {
       setResponseMessage("Phone number is required!");
       setIsError(true);
@@ -71,7 +67,6 @@ const InquirySection = () => {
         "https://easeesqueezy.com/easeesqueezy_backend/public/api/admin/contact",
         formData
       );
-
       if (res.status === 201) {
         setResponseMessage(res.data.message);
         setIsError(false);
@@ -95,7 +90,7 @@ const InquirySection = () => {
     <section
       id="inquiry"
       ref={ref}
-      className="  bg-[url('/images/contactbg.webp')] bg-center bg-no-repeat bg-blend-multiply"
+      className="  bg-[url('/images/contactbg.png')] bg-center bg-no-repeat bg-blend-multiply"
     >
       <div className="container mx-auto px-6 sm:px-12 grid grid-cols-1 lg:grid-cols-2 gap-10  pt-0 pb-16 sm:pt-[4rem] items-center">
         <motion.div
@@ -214,9 +209,14 @@ const InquirySection = () => {
                 <FaWhatsapp className="text-xl text-green-700" />
                 <span>+91 84900-91122</span>
               </div>
-              <div className="w-max flex items-center gap-3 bg-[#E8C044] px-4 py-2 rounded-full text-white font-bold shadow">
-                <FaEnvelope className="text-xl" />
-                <span>easeesqueezy@gmail.com</span>
+              <div className="w-max  bg-[#E8C044] px-4 py-2 rounded-full text-white font-bold shadow hover:opacity-90 transition">
+                <a
+                  href="mailto:contact@easeesqueezy.com"
+                  className="flex items-center gap-3"
+                >
+                  <FaEnvelope className="text-xl" />
+                  <span>contact@easeesqueezy.com</span>
+                </a>
               </div>
             </motion.div>
             <p className="text-gray-700 mb-6 max-w-md ">
@@ -233,13 +233,13 @@ const InquirySection = () => {
             viewport={{ once: false }}
           >
             <img
-              src="/images/contact1.webp"
+              src="/images/about/contact1.png"
               alt="Oranges"
               loading="lazy"
               className="w-80 md:w-48 lg:w-60 relative z-10 drop-shadow-2xl h-[250px] sm:h-[300px]"
             />
             <img
-              src="/images/sliderBottels/mango.webp"
+              src="/images/sliderBottels/mango.png"
               alt="Juice Bottle"
               loading="lazy"
               className="w-full -ml-[6rem] sm:-ml-[8rem] z-20 drop-shadow-2xl h-[300px] sm:h-[400px]"

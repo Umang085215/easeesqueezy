@@ -1,71 +1,75 @@
-import React from "react";
+import React, { lazy } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import ScrollToTop from "../utility/ScrollToTop";
-import Home from "../easeeSqueezyUser/pages/Home";
-import AddProduct from "../easeeSqueezyAdmin/pages/AddProduct";
-import Dashboard from "../easeeSqueezyAdmin/pages/Dashboard";
-import Products from "../easeeSqueezyAdmin/pages/Products";
-import AdminLogin from "../easeeSqueezyAdmin/pages/AdminLogin";
-import Categories from "../easeeSqueezyAdmin/pages/Categories";
-import Manufacture from "../easeeSqueezyAdmin/pages/Manufacture";
-import EditProduct from "../easeeSqueezyAdmin/pages/EditProduct";
-import AdminLayout from "../easeeSqueezyAdmin/layouts/AdminLayout";
-import AdminPrivateRoute from "../easeeSqueezyAdmin/context/AdminPrivateRoute";
-import AdminPublicRoute from "../easeeSqueezyAdmin/context/AdminPublicRoute";
-import About from "../easeeSqueezyUser/pages/About";
-import TermsService from "../easeeSqueezyUser/pages/TermsService";
-import PrivacyPolicy from "../easeeSqueezyUser/pages/PrivacyPolicy";
-import Layout from "../easeeSqueezyUser/layouts/Layout";
-import Juice from "../easeeSqueezyUser/pages/Juice";
+import PreLoader from "../easeeSqueezyUser/components/loaders/PreLoader";
+import NotFound from "../easeeSqueezyUser/pages/NotFound";
+const Layout = lazy(() => import("../easeeSqueezyUser/layouts/Layout"));
+const Home = lazy(() => import("../easeeSqueezyUser/pages/Home"));
+const About = lazy(() => import("../easeeSqueezyUser/pages/About"));
+const Juice = lazy(() => import("../easeeSqueezyUser/pages/Juice"));
+const AdminLayout = lazy(() =>
+  import("../easeeSqueezyAdmin/layouts/AdminLayout")
+);
+const AdminLogin = lazy(() => import("../easeeSqueezyAdmin/pages/AdminLogin"));
+const Dashboard = lazy(() => import("../easeeSqueezyAdmin/pages/Dashboard"));
+const Products = lazy(() => import("../easeeSqueezyAdmin/pages/Products"));
+const Manufacture = lazy(() =>
+  import("../easeeSqueezyAdmin/pages/Manufacture")
+);
+const Categories = lazy(() => import("../easeeSqueezyAdmin/pages/Categories"));
+const AddProduct = lazy(() => import("../easeeSqueezyAdmin/pages/AddProduct"));
+const EditProduct = lazy(() =>
+  import("../easeeSqueezyAdmin/pages/EditProduct")
+);
+
+const AdminPrivateRoute = lazy(() =>
+  import("../easeeSqueezyAdmin/context/AdminPrivateRoute")
+);
+const AdminPublicRoute = lazy(() =>
+  import("../easeeSqueezyAdmin/context/AdminPublicRoute")
+);
 
 const Routers = () => {
   return (
-    <>
-      <Router>
-        <ScrollToTop />
-        {/* User Routing */}
-        <Routes>
-          <Route path="/" element={<Layout />}>
-            <Route index element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/juices" element={<Juice />} />
-            <Route path="/terms-service" element={<TermsService />} />
-            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-          </Route>
-        </Routes>
-
-        {/* Admin Routing */}
-
-        <Routes>
-          <Route
-            path="/admin/login"
-            element={
-              <AdminPublicRoute>
-                <AdminLogin />
-              </AdminPublicRoute>
-            }
-          />
-
-          <Route
-            path="/admin"
-            element={
-              <AdminPrivateRoute>
-                <AdminLayout />
-              </AdminPrivateRoute>
-            }
-          >
-            <Route index element={<Dashboard />} />
-            <Route path="dashboard" element={<Dashboard />} />
-            <Route path="products" element={<Products />} />
-            <Route path="manufacture" element={<Manufacture />} />
-            <Route path="categories" element={<Categories />} />
-            <Route path="products/add-product" element={<AddProduct />} />
-            <Route path="products/:id" element={<EditProduct />} />
-          </Route>
-        </Routes>
-      </Router>
-    </>
+    <Router>
+      <ScrollToTop />
+      {/* <Suspense fallback={<PreLoader />}> */}
+      <Routes>
+        {/* User Router */}
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="about" element={<About />} />
+          <Route path="juices" element={<Juice />} />
+        </Route>
+        {/* Admin router */}
+        <Route
+          path="/admin/login"
+          element={
+            <AdminPublicRoute>
+              <AdminLogin />
+            </AdminPublicRoute>
+          }
+        />
+        <Route
+          path="/admin"
+          element={
+            <AdminPrivateRoute>
+              <AdminLayout />
+            </AdminPrivateRoute>
+          }
+        >
+          <Route index element={<Dashboard />} />
+          <Route path="dashboard" element={<Dashboard />} />
+          <Route path="products" element={<Products />} />
+          <Route path="manufacture" element={<Manufacture />} />
+          <Route path="categories" element={<Categories />} />
+          <Route path="products/add-product" element={<AddProduct />} />
+          <Route path="products/:id" element={<EditProduct />} />
+        </Route>
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+      {/* </Suspense> */}
+    </Router>
   );
 };
 

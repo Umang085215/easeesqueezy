@@ -1,5 +1,5 @@
 import React from "react";
-import { FaQuoteLeft, FaStar, FaStarHalfAlt, FaRegStar } from "react-icons/fa";
+import { FaQuoteLeft, FaStar, FaRegStar } from "react-icons/fa";
 
 const TestimonialCard = ({ testimonial }) => {
   const renderStars = (rating) => {
@@ -21,20 +21,12 @@ const TestimonialCard = ({ testimonial }) => {
         {/* Hover Image */}
         <div className="absolute bottom-[0px] left-0 w-full opacity-100 transition-all duration-500 ease-in-out  ">
           <img
-            src="/images/testimonial-bg.webp"
+            src="/images/about/testimonial-bg.png"
             alt="hover"
             loading="lazy"
             className="w-full object-cover rounded-b-2xl"
           />
         </div>
-        {/* <div className="absolute bottom-[-100px] left-0 w-full opacity-0 transition-all duration-500 ease-in-out group-hover:bottom-0 group-hover:opacity-100">
-          <img
-            src="/images/testimonial-bg.webp"
-            alt="hover"
-            loading="lazy"
-            className="w-full object-cover rounded-b-2xl"
-          />
-        </div> */}
       </div>
     </>
   );

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { ShoppingCart, CircleUserRound, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import StickyHeader from "../components/StickyHeader";
 
 const Header = () => {
@@ -13,7 +13,10 @@ const Header = () => {
 
   return (
     <header className="bg-white text-[#003c17] shadow-md fixed top-0 left-0 w-full z-50">
-      <StickyHeader />
+      <div className="hidden sm:block">
+        <StickyHeader />
+      </div>
+
       <div className="container m-auto py-2 px-6 sm:px-12 flex items-center justify-between">
         {/* Logo */}
         <div
@@ -21,10 +24,10 @@ const Header = () => {
           onClick={() => navigate("/")}
         >
           <img
-            src="/images/new_logo.webp"
+            src="/images/logo/new_logo.png"
             alt="Easee Squeezy"
             loading="lazy"
-            className="w-24 max-w-full h-auto"
+            className="w-24 max-w-full h-[60px]"
           />
         </div>
 
@@ -40,7 +43,7 @@ const Header = () => {
             to="/about"
             className="transition delay-150 duration-300 ease-in-out hover:text-[#fd9b03]"
           >
-            About-Us
+            About Us
           </Link>
           <Link
             to="/juices"
@@ -101,7 +104,7 @@ const Header = () => {
             onClick={closeMenu}
             className="border-b-[1px] border-b-gray-500"
           >
-            About-Us
+            About Us
           </Link>
           <Link
             to="/juices"
