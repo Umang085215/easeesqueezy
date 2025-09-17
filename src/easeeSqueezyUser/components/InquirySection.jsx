@@ -205,11 +205,11 @@ const InquirySection = () => {
               transition={{ duration: 1.2 }}
               viewport={{ once: false }}
             >
-              <div className="w-max flex items-center gap-3 bg-[#E8C044] px-4 py-2 rounded-full text-white font-bold shadow">
-                <FaWhatsapp className="text-xl text-green-700" />
+              <div className="w-max flex items-center gap-3 bg-[#E8C044] px-4 py-2 rounded-full text-white font-normal">
+                <FaWhatsapp className="text-xl" />
                 <span>+91 84900-91122</span>
               </div>
-              <div className="w-max  bg-[#E8C044] px-4 py-2 rounded-full text-white font-bold shadow hover:opacity-90 transition">
+              <div className="w-max  bg-[#E8C044] px-4 py-2 rounded-full text-white font-normal  hover:opacity-90 transition">
                 <a
                   href="mailto:contact@easeesqueezy.com"
                   className="flex items-center gap-3"
