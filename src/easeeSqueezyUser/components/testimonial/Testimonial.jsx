@@ -5,7 +5,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/effect-coverflow";
 import TestimonialCard from "./TestimonialCard";
-import testimonials from "../../data/products/Testimonials.json";
+import testimonials from "../../data/products/testimonials.json";
 
 const Testimonial = () => {
   const [testimonialData, setTestimonialData] = useState([]);
