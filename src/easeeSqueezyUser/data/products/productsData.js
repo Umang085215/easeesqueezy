@@ -1,8 +1,8 @@
-import juice1 from "../../../assets/juices/juice5.png";
-import juice2 from "../../../assets/juices/juice1.png";
+import juice1 from "../../../assets/juices/juice1.png";
+import juice2 from "../../../assets/juices/juice2.png";
 import juice3 from "../../../assets/juices/juice3.png";
-import juice4 from "../../../assets/juices/juice2.png";
-import juice5 from "../../../assets/juices/juice4.png";
+import juice4 from "../../../assets/juices/juice4.png";
+import juice5 from "../../../assets/juices/juice5.png";
 import juice6 from "../../../assets/juices/juice6.png";
 
 const products = [

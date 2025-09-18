@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "name": "Aakash P",
+    "feedback": "I absolutely love Easee Squeezy juices! The flavors are always fresh, and I can tell they use real fruits without any added preservatives. It’s become my daily energy booster.",
+    "rating": 4
+  },
+  {
+    "id": 2,
+    "name": "Sanket K",
+    "feedback": "Ordering from Easee Squeezy has been such a pleasant experience. The delivery is quick, the bottles are neatly packed, and the mango juice tastes exactly like biting into a fresh mango.",
+    "rating": 3
+  },
+  {
+    "id": 3,
+    "name": "Swati P",
+    "feedback": "As someone who avoids sugary drinks, I’m so glad I found this service. Their cold-pressed juices taste natural and keep me refreshed after a workout. Highly recommend!  ",
+    "rating": 4
+  },
+  {
+    "id": 4,
+    "name": "Yash K",
+    "feedback": "Easee Squeezy makes healthy living simple. The kiwi blend is my favorite—it’s tangy, refreshing, and feels like a treat without the guilt.",
+    "rating": 4
+  },
+  {
+    "id": 5,
+    "name": "Rutvika U",
+    "feedback": "I ordered a variety pack to try different flavors, and every single one was delicious. My kids also loved the orange juice—finally, a healthy option they genuinely enjoy.",
+    "rating": 4
+  }
+]

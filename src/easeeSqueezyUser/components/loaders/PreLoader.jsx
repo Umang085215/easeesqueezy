@@ -1,14 +1,12 @@
 import React, { useState, useEffect } from "react";
+import i1 from "../../../assets/fruitIcons/o1.png";
+import i2 from "../../../assets/fruitIcons/o2.png";
+import i3 from "../../../assets/fruitIcons/m4.png";
 
-const fruits = [
-  "/images/fruitIcons/o1.webp",
-  "/images/fruitIcons/o2.webp",
-  "/images/fruitIcons/m4.webp",
-];
+const fruits = [i1, i2, i3];
 
 const PreLoader = () => {
   const [index, setIndex] = useState(0);
-
   useEffect(() => {
     const interval = setInterval(() => {
       setIndex((prev) => (prev + 1) % fruits.length);

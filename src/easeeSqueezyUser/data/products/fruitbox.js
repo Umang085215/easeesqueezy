@@ -1,11 +1,11 @@
-import box1 from "../../../assets/products/box9.png";
-import box2 from "../../../assets/products/box12.png";
-import box3 from "../../../assets/products/box10.png";
-import box4 from "../../../assets/products/box13.png";
-import box5 from "../../../assets/products/box14.png";
-import box6 from "../../../assets/products/box16.png";
-import box7 from "../../../assets/products/box15.png";
-import box8 from "../../../assets/products/box17.png";
+import box1 from "../../../assets/products/box1.png";
+import box2 from "../../../assets/products/box2.png";
+import box3 from "../../../assets/products/box3.png";
+import box4 from "../../../assets/products/box4.png";
+import box5 from "../../../assets/products/box5.png";
+import box6 from "../../../assets/products/box6.png";
+import box7 from "../../../assets/products/box7.png";
+import box8 from "../../../assets/products/box8.png";
 
 const fruitBox = [
   {

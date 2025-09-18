@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import Features from "../components/Features";
 import aboutIcons from "../data/products/aboutIcons";
 import jm from "../../assets/whyeasee/jm.jpg";
 import cp from "../../assets/whyeasee/cp.jpg";
@@ -140,7 +141,7 @@ const About = () => {
               as nature intended.
             </motion.p>
             <motion.div
-              className="grid grid-cols-1 sm:grid-cols-3 gap-8 text-center md:text-left mb-10"
+              className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 text-center md:text-left mb-10"
               initial="hidden"
               whileInView="visible"
               viewport={{ once: false }}
@@ -154,15 +155,7 @@ const About = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6 }}
                 >
-                  <img
-                    src={item.img}
-                    alt={item.title}
-                    className="w-20 sm:w-[3rem] mb-2 mx-auto md:mx-0"
-                  />
-                  <p className="text-lg sm:text-xl font-bold text-[#033f1d] mb-2">
-                    {item.title}
-                  </p>
-                  <p className="text-gray-700">{item.desc}</p>
+                  <Features item={item} />
                 </motion.div>
               ))}
             </motion.div>

@@ -4,6 +4,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import aboutIcons from "../data/products/aboutIcons";
 import natureImg from "../../assets/about/natural.svg";
 import aboutImg from "../../assets/about/c5.png";
+import Features from "./Features";
 
 const AboutContent = () => {
   const navigate = useNavigate();
@@ -91,15 +92,7 @@ const AboutContent = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
               >
-                <img
-                  src={item.img}
-                  alt={item.title}
-                  className="w-20 sm:w-[3rem] mb-2 mx-auto md:mx-0"
-                />
-                <p className="text-lg sm:text-xl font-bold text-[#033f1d] mb-2">
-                  {item.title}
-                </p>
-                <p className="text-gray-700">{item.desc}</p>
+                <Features item={item} />
               </motion.div>
             ))}
           </motion.div>

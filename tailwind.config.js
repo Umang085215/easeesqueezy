@@ -11,7 +11,7 @@ export default {
         light_red: "#f3534d",
         light_orange: "#eb713e",
         light_brown: "#e7a956",
-        light_green: "#cee569",
+        light_green: "#cee662",
         light_pink: "#f268a5",
         light_yellow: "#f8de62",
       },

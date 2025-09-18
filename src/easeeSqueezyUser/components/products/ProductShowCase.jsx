@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Autoplay } from "swiper/modules";
 import "swiper/css";
@@ -9,6 +9,12 @@ import JuiceCard from "./JuiceCard";
 import products from "../../data/products/productsData";
 
 const ProductShowcase = () => {
+  const [juiceData, setJuiceData] = useState([]);
+
+  useEffect(() => {
+    setJuiceData(products);
+  }, []);
+
   return (
     <section className="relative container px-6 sm:px-12 mx-auto mt-0 pb-10 pt-10 text-center overflow-hidden">
       <div
@@ -59,7 +65,7 @@ const ProductShowcase = () => {
               1280: { slidesPerView: 5 },
             }}
           >
-            {products.map((product, i) => (
+            {juiceData.map((product, i) => (
               <SwiperSlide key={i} className="flex justify-center">
                 <div className="w-[260px]">
                   {" "}
