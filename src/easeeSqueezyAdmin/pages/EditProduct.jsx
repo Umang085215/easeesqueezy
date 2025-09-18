@@ -23,7 +23,7 @@ const EditProduct = () => {
   useEffect(() => {
     const storedProducts = JSON.parse(localStorage.getItem("products")) || [];
     const product = storedProducts.find((p) => String(p.id) === id);
-    console.log(storedProducts);
+
     if (product) {
       setFormData({
         ...product,

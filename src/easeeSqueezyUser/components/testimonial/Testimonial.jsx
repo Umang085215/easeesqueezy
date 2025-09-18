@@ -12,7 +12,7 @@ const Testimonial = () => {
   useEffect(() => {
     setTestimonialData(testimonials);
   }, []);
-  console.log(testimonialData);
+
   return (
     <section className=" py-12">
       <div className="relative container w-full px-6 sm:px-12 mx-auto text-center">

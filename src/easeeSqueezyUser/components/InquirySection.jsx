@@ -8,13 +8,10 @@ import juice2 from "../../assets/sliderBottels/mango12.png";
 
 const schema = yup.object().shape({
   name: yup.string().required("Name is required"),
-  email: yup.string().email("Invalid email").required("Email is required"),
+  email: yup.string().required("Email is required").email("Invalid email"),
   phone: yup
     .string()
-    .matches(
-      /^\d{3}-\d{3}-\d{4}$/,
-      "Phone number must be in format 987-654-3210"
-    )
+    .matches(/^\d{10}$/, "Phone number must be exactly 10 digits")
     .required("Phone number is required"),
   message: yup.string().required("Message is required"),
 });
@@ -154,18 +151,9 @@ const InquirySection = () => {
                 onChange={(e) => {
                   let digits = e.target.value.replace(/\D/g, "");
                   if (digits.length > 10) digits = digits.slice(0, 10);
-                  let formatted = digits;
-                  if (digits.length > 6) {
-                    formatted = `${digits.slice(0, 3)}-${digits.slice(
-                      3,
-                      6
-                    )}-${digits.slice(6)}`;
-                  } else if (digits.length > 3) {
-                    formatted = `${digits.slice(0, 3)}-${digits.slice(3)}`;
-                  }
-                  setFormData({ ...formData, phone: formatted });
+                  setFormData({ ...formData, phone: digits });
                 }}
-                maxLength={12}
+                maxLength={10}
                 className={`w-full p-2 border rounded-md bg-gray-100 outline-none focus:outline-none ${
                   errors.phone ? "border-red-500" : "border-gray-300"
                 }`}
@@ -194,7 +182,7 @@ const InquirySection = () => {
             <motion.button
               type="submit"
               disabled={loading}
-              className="md:col-span-2 bg-[#FF9300] text-white font-bold py-3 rounded-md hover:bg-orange-600 transition"
+              className="md:col-span-2 bg-[#e8c044] text-white font-bold py-3 rounded-md hover:bg-orange-600 transition"
             >
               {loading ? "Submitting..." : "SUBMIT"}
             </motion.button>

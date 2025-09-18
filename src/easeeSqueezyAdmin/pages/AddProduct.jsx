@@ -191,7 +191,6 @@ const AddProduct = () => {
 
       const data = await res.json();
       setCategories(data);
-      console.log("Categories:", data);
     } catch (error) {
       console.error("Error fetching categories:", error);
     }

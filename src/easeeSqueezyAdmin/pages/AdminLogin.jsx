@@ -68,7 +68,7 @@ const AdminLogin = () => {
       const data = await response.json();
       if (response.ok) {
         localStorage.setItem("adminToken", data.token);
-        console.log("Admin login successful:", data);
+
         navigate("/admin");
       } else {
         setErrors({ apiError: data.message || "Login failed" });
