@@ -46,7 +46,7 @@ const Hero = () => {
 
             <div
               ref={ref}
-              className={`relative w-full  min-h-[80vh] sm:h-[90vh] flex justify-center items-center overflow-hidden ${slide.bg}`}
+              className={`relative w-full  min-h-[70vh] sm:h-[90vh] flex justify-center items-center overflow-hidden ${slide.bg}`}
             >
               <motion.h1
                 className=" hidden sm:block absolute text-[14vw] sm:text-[10vw] font-extrabold uppercase text-[#ffffffb5] z-0 leading-none text-center "

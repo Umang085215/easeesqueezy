@@ -1,7 +1,23 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import { FaWhatsapp, FaEnvelope } from "react-icons/fa";
 import { motion, useScroll, useTransform } from "framer-motion";
 import axios from "axios";
+import * as yup from "yup";
+import juice1 from "../../assets/about/contact1.png";
+import juice2 from "../../assets/sliderBottels/mango12.png";
+
+const schema = yup.object().shape({
+  name: yup.string().required("Name is required"),
+  email: yup.string().email("Invalid email").required("Email is required"),
+  phone: yup
+    .string()
+    .matches(
+      /^\d{3}-\d{3}-\d{4}$/,
+      "Phone number must be in format 987-654-3210"
+    )
+    .required("Phone number is required"),
+  message: yup.string().required("Message is required"),
+});
 
 const InquirySection = () => {
   const ref = useRef(null);
@@ -11,9 +27,16 @@ const InquirySection = () => {
     phone: "",
     message: "",
   });
+  const [errors, setErrors] = useState({});
   const [loading, setLoading] = useState(false);
   const [responseMessage, setResponseMessage] = useState("");
   const [isError, setIsError] = useState(false);
+
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "end start"],
+  });
+  const y = useTransform(scrollYProgress, [0, 1], [0, 80]);
 
   useEffect(() => {
     if (responseMessage) {
@@ -25,44 +48,18 @@ const InquirySection = () => {
     }
   }, [responseMessage]);
 
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start end", "end start"],
-  });
-  const y = useTransform(scrollYProgress, [0, 1], [0, 80]);
-
   const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
+    setErrors({});
     setResponseMessage("");
-    setIsError(false);
-    if (!formData.email.trim()) {
-      setResponseMessage("Email is required!");
-      setIsError(true);
-      setLoading(false);
-      return;
-    }
-    if (!formData.phone.trim()) {
-      setResponseMessage("Phone number is required!");
-      setIsError(true);
-      setLoading(false);
-      return;
-    }
-
-    if (formData.phone.length !== 10) {
-      setResponseMessage("Phone number must be exactly 10 digits!");
-      setIsError(true);
-      setLoading(false);
-      return;
-    }
 
     try {
+      await schema.validate(formData, { abortEarly: false });
       const res = await axios.post(
         "https://easeesqueezy.com/easeesqueezy_backend/public/api/admin/contact",
         formData
@@ -70,17 +67,19 @@ const InquirySection = () => {
       if (res.status === 201) {
         setResponseMessage(res.data.message);
         setIsError(false);
-        setFormData({
-          name: "",
-          email: "",
-          phone: "",
-          message: "",
-        });
+        setFormData({ name: "", email: "", phone: "", message: "" });
       }
-    } catch (error) {
-      console.error(error);
-      setResponseMessage("Failed to submit inquiry. Please try again.");
-      setIsError(true);
+    } catch (err) {
+      if (err.inner) {
+        const validationErrors = {};
+        err.inner.forEach((error) => {
+          validationErrors[error.path] = error.message;
+        });
+        setErrors(validationErrors);
+      } else {
+        setResponseMessage("Failed to submit inquiry. Please try again.");
+        setIsError(true);
+      }
     } finally {
       setLoading(false);
     }
@@ -90,11 +89,12 @@ const InquirySection = () => {
     <section
       id="inquiry"
       ref={ref}
-      className="  bg-[url('/images/contactbg.png')] bg-center bg-no-repeat bg-blend-multiply"
+      className=" bg-[url('/images/contactbg.png')] bg-center bg-no-repeat bg-blend-multiply"
     >
-      <div className="container mx-auto px-6 sm:px-12 grid grid-cols-1 lg:grid-cols-2 gap-10  pt-0 pb-16 sm:pt-[4rem] items-center">
+      <div className="container mx-auto px-6 sm:px-12 grid grid-cols-1 lg:grid-cols-2 gap-10 pt-0 pb-16 sm:pt-[4rem] items-start">
+        {/* LEFT SIDE FORM */}
         <motion.div
-          className="mobileForm bg-white  shadow-lg rounded-lg px-4 sm:px-8 py-8 order-2 lg:order-1"
+          className="mobileForm bg-white shadow-lg rounded-lg px-4 sm:px-8 py-8 order-2 lg:order-1"
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 1.4 }}
@@ -108,53 +108,88 @@ const InquirySection = () => {
             respond promptly.
           </p>
 
+          {/* --- FORM --- */}
           <form
             onSubmit={handleSubmit}
             className="grid grid-cols-1 md:grid-cols-2 gap-4"
           >
-            <input
-              type="text"
-              name="name"
-              placeholder="Name"
-              value={formData.name}
-              onChange={handleChange}
-              required
-              className="md:col-span-2 w-full p-3 border rounded-md bg-gray-100 outline-none"
-            />
-            <input
-              type="email"
-              name="email"
-              placeholder="Email"
-              value={formData.email}
-              onChange={handleChange}
-              required
-              className="w-full p-3 border rounded-md bg-gray-100 outline-none"
-            />
+            <div className="md:col-span-2 flex flex-col">
+              <input
+                type="text"
+                name="name"
+                placeholder="Name"
+                value={formData.name}
+                onChange={handleChange}
+                className={`w-full p-2 border rounded-md bg-gray-100 outline-none focus:outline-none ${
+                  errors.name ? "border-red-500" : "border-gray-300"
+                }`}
+              />
+              {errors.name && (
+                <p className="text-red-600 text-sm">{errors.name}</p>
+              )}
+            </div>
 
-            <input
-              type="tel"
-              name="phone"
-              placeholder="Phone"
-              value={formData.phone}
-              onChange={(e) => {
-                const onlyDigits = e.target.value.replace(/\D/g, "");
-                setFormData({ ...formData, phone: onlyDigits });
-              }}
-              pattern="[0-9]*"
-              inputMode="numeric"
-              maxLength={10}
-              required
-              className="w-full p-3 border rounded-md bg-gray-100 outline-none"
-            />
+            <div className="flex flex-col">
+              <input
+                type="text"
+                name="email"
+                placeholder="Email"
+                value={formData.email}
+                onChange={handleChange}
+                className={`w-full p-2 border rounded-md bg-gray-100 outline-none focus:outline-none ${
+                  errors.email ? "border-red-500" : "border-gray-300"
+                }`}
+              />
+              {errors.email && (
+                <p className="text-red-600 text-sm">{errors.email}</p>
+              )}
+            </div>
 
-            <textarea
-              name="message"
-              placeholder="Write your message"
-              rows="4"
-              value={formData.message}
-              onChange={handleChange}
-              className="md:col-span-2 w-full p-3 border rounded-md bg-gray-100 outline-none"
-            ></textarea>
+            <div className="flex flex-col">
+              <input
+                type="tel"
+                name="phone"
+                placeholder="Phone"
+                value={formData.phone}
+                onChange={(e) => {
+                  let digits = e.target.value.replace(/\D/g, "");
+                  if (digits.length > 10) digits = digits.slice(0, 10);
+                  let formatted = digits;
+                  if (digits.length > 6) {
+                    formatted = `${digits.slice(0, 3)}-${digits.slice(
+                      3,
+                      6
+                    )}-${digits.slice(6)}`;
+                  } else if (digits.length > 3) {
+                    formatted = `${digits.slice(0, 3)}-${digits.slice(3)}`;
+                  }
+                  setFormData({ ...formData, phone: formatted });
+                }}
+                maxLength={12}
+                className={`w-full p-2 border rounded-md bg-gray-100 outline-none focus:outline-none ${
+                  errors.phone ? "border-red-500" : "border-gray-300"
+                }`}
+              />
+              {errors.phone && (
+                <p className="text-red-600 text-sm">{errors.phone}</p>
+              )}
+            </div>
+
+            <div className="md:col-span-2 flex flex-col">
+              <textarea
+                name="message"
+                placeholder="Write your message"
+                rows="2"
+                value={formData.message}
+                onChange={handleChange}
+                className={`w-full p-2 border rounded-md bg-gray-100 outline-none focus:outline-none ${
+                  errors.message ? "border-red-500" : "border-gray-300"
+                }`}
+              ></textarea>
+              {errors.message && (
+                <p className="text-red-600 text-sm">{errors.message}</p>
+              )}
+            </div>
 
             <motion.button
               type="submit"
@@ -176,8 +211,9 @@ const InquirySection = () => {
           )}
         </motion.div>
 
-        <div className="relative pt-0 pb-12 sm:pt-[3rem] flex flex-col justify-between h-full order-1 lg:order-2">
-          <div className="z-30">
+        {/* RIGHT SIDE CONTENT */}
+        <div className="relative order-1 lg:order-2">
+          <div className=" relative z-30">
             <motion.h3
               className="order_title text-4xl font-extrabold text-[#CA9D15] mb-3"
               initial={{ opacity: 0, y: -50 }}
@@ -209,7 +245,7 @@ const InquirySection = () => {
                 <FaWhatsapp className="text-xl" />
                 <span>+91 84900-91122</span>
               </div>
-              <div className="w-max  bg-[#E8C044] px-4 py-2 rounded-full text-white font-normal  hover:opacity-90 transition">
+              <div className="w-max bg-[#E8C044] px-4 py-2 rounded-full text-white font-normal hover:opacity-90 transition">
                 <a
                   href="mailto:contact@easeesqueezy.com"
                   className="flex items-center gap-3"
@@ -219,13 +255,13 @@ const InquirySection = () => {
                 </a>
               </div>
             </motion.div>
-            <p className="text-gray-700 mb-6 max-w-md ">
+            <p className="text-gray-700 mb-6 pb-5 max-w-md">
               🚚 Fresh juice, straight to your door — no hassle, just health!
             </p>
           </div>
 
           <motion.div
-            className="absolute -bottom-[140px] right-[0px] lg:bottom-[0px] lg:right-[20px] flex items-center justify-center lg:justify-start z-0"
+            className="absolute -bottom-[100px] right-[0px]  lg:right-[20px] flex items-end justify-end z-0"
             style={{ y }}
             initial={{ opacity: 0, scale: 0.4 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -233,16 +269,16 @@ const InquirySection = () => {
             viewport={{ once: false }}
           >
             <img
-              src="/images/about/contact1.png"
+              src={juice1}
               alt="Oranges"
               loading="lazy"
-              className="w-80 md:w-48 lg:w-60 relative z-10 drop-shadow-2xl h-[250px] sm:h-[300px]"
+              className="w-60 md:w-48 lg:w-60 relative z-10 drop-shadow-2xl h-[250px] sm:h-[300px]"
             />
             <img
-              src="/images/sliderBottels/mango.png"
+              src={juice2}
               alt="Juice Bottle"
               loading="lazy"
-              className="w-full -ml-[6rem] sm:-ml-[8rem] z-20 drop-shadow-2xl h-[300px] sm:h-[400px]"
+              className="w-[8rem] md:w-48 lg:w-50 -ml-[4rem] sm:-ml-[4rem] z-20 drop-shadow-2xl h-[200px] sm:h-[300px]"
             />
           </motion.div>
         </div>

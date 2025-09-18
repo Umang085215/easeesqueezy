@@ -89,16 +89,16 @@ const AdminLogin = () => {
 
       <div className=" w-[45%] absolute right-0 top-50 flex  justify-center mb-10 z-10 rotate-[180deg] h-screen ">
         <img
-          src="/images/login.svg"
+          src="/adminImages/logo/login.svg"
           alt="admin logo"
           className="w-full blur-md"
         />
       </div>
       <div className="absolute left-10 top-10 flex  justify-center  z-10">
         <img
-          src="/images/new_logo.webp"
+          src="/adminImages/logo/new_logo.png"
           alt="admin logo"
-          className="w-24 sm:w-36"
+          className="w-24 sm:w-24"
         />
       </div>
       <div className="bg-white shadow-lg rounded-lg px-8 py-12 w-full max-w-md border z-10">

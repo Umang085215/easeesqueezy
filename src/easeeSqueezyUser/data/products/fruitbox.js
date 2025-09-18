@@ -1,51 +1,60 @@
+import box1 from "../../../assets/products/box9.png";
+import box2 from "../../../assets/products/box12.png";
+import box3 from "../../../assets/products/box10.png";
+import box4 from "../../../assets/products/box13.png";
+import box5 from "../../../assets/products/box14.png";
+import box6 from "../../../assets/products/box16.png";
+import box7 from "../../../assets/products/box15.png";
+import box8 from "../../../assets/products/box17.png";
+
 const fruitBox = [
   {
     id: 1,
     title: "The Tropical Medley",
     description: " A vibrant mix of exotic fruits",
-    img: "/images/products/box9.png",
+    img: box1,
   },
   {
     id: 2,
     title: "Golden Sunrise",
     description: "Sweet, ripe mango and papaya",
-    img: "images/products/box12.png",
+    img: box2,
   },
   {
     id: 3,
     title: "Nature's Platter",
     description: "A fresh and wholesome selection",
-    img: "images/products/box10.png",
+    img: box3,
   },
   {
     id: 4,
     title: "Sunset Blend",
     description: "A sweet, juicy fruit assortment",
-    img: "images/products/box13.png",
+    img: box4,
   },
   {
     id: 5,
     title: "The Daily Mix",
     description: "Your balanced, healthy mix of fruits",
-    img: "images/products/box14.png",
+    img: box5,
   },
   {
     id: 6,
     title: "The Fresh Duo",
     description: "A convenient two-box combo",
-    img: "images/products/box16.png",
+    img: box6,
   },
   {
     id: 7,
     title: "The Berry Bowl",
     description: "A bowl of sweet berries",
-    img: "images/products/box15.png",
+    img: box7,
   },
   {
     id: 8,
     title: "The Exotic Assortment",
     description: "A diverse and unique assortment",
-    img: "/images/products/box17.png",
+    img: box8,
   },
 ];
 

@@ -1,5 +1,10 @@
 import React from "react";
 import { motion } from "framer-motion";
+import aboutIcons from "../data/products/aboutIcons";
+import jm from "../../assets/whyeasee/jm.jpg";
+import cp from "../../assets/whyeasee/cp.jpg";
+import natureImg from "../../assets/about/natural.svg";
+import aboutImg from "../../assets/about/c5.png";
 
 const About = () => {
   return (
@@ -21,7 +26,7 @@ const About = () => {
             <div className="flex flex-col md:flex-row">
               <div className="md:w-1/2">
                 <img
-                  src="/images/whyeasee/jm.jpg"
+                  src={jm}
                   alt="Placeholder image"
                   className="w-full h-full object-cover rounded-full"
                 />
@@ -67,7 +72,7 @@ const About = () => {
 
               <div className="md:w-1/2">
                 <img
-                  src="/images/whyeasee/cp.jpg"
+                  src={cp}
                   alt="Placeholder image"
                   className=" object-cover rounded-full"
                 />
@@ -79,7 +84,7 @@ const About = () => {
 
       <section className="relative container py-8 sm:py-16 px-6 sm:px-12 overflow-hidden mx-auto">
         <motion.img
-          src="/images/about/natural.svg"
+          src={natureImg}
           alt="Fruit decoration"
           className=" absolute top-[0.5rem] right-40 w-16 sm:top-[2rem] sm:right-20 md:w-[8rem]"
           initial={{ opacity: 0, scale: 0.8 }}
@@ -95,7 +100,7 @@ const About = () => {
             transition={{ duration: 0.8, ease: "easeOut" }}
             viewport={{ once: false }}
           >
-            <img src="/images/about/c5.png" alt="About Easee Squeezy" />
+            <img src={aboutImg} alt="About Easee Squeezy" />
           </motion.div>
           <motion.div
             className="order-2 md:order-1 md:col-span-2"
@@ -141,38 +146,7 @@ const About = () => {
               viewport={{ once: false }}
               transition={{ staggerChildren: 0.3 }}
             >
-              {[
-                {
-                  img: "/images/about/i1.png",
-                  title: "Nutrient-Rich",
-                  desc: "Packed with vital nutrients to fuel your everyday health.",
-                },
-                {
-                  img: "/images/about/i2.png",
-                  title: "Pure & Preservative-Free",
-                  desc: "Nothing artificial—just clean, natural, and honest ingredients.",
-                },
-                {
-                  img: "/images/about/i3.png",
-                  title: "Supports Digestion & Detox",
-                  desc: "Cleanses your system and aids healthy digestion naturally.",
-                },
-                {
-                  img: "/images/about/i4.png",
-                  title: "Instant Natural Energy",
-                  desc: "Feel refreshed and energized with every nutritious sip.",
-                },
-                {
-                  img: "/images/about/i5.png",
-                  title: "Freshly Cold-Pressed Daily",
-                  desc: "Pressed fresh each day to lock in nutrients.",
-                },
-                {
-                  img: "/images/about/i6.png",
-                  title: "Sugar-Free",
-                  desc: "Naturally sweet, with zero added sugars or guilt.",
-                },
-              ].map((item, i) => (
+              {aboutIcons.map((item, i) => (
                 <motion.div
                   key={i}
                   className="p-4"

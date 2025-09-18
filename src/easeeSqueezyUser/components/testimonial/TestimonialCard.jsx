@@ -1,5 +1,6 @@
 import React from "react";
 import { FaQuoteLeft, FaStar, FaRegStar } from "react-icons/fa";
+import testimonialBg from "../../../assets/about/testimonial-bg.png";
 
 const TestimonialCard = ({ testimonial }) => {
   const renderStars = (rating) => {
@@ -21,7 +22,7 @@ const TestimonialCard = ({ testimonial }) => {
         {/* Hover Image */}
         <div className="absolute bottom-[0px] left-0 w-full opacity-100 transition-all duration-500 ease-in-out  ">
           <img
-            src="/images/about/testimonial-bg.png"
+            src={testimonialBg}
             alt="hover"
             loading="lazy"
             className="w-full object-cover rounded-b-2xl"

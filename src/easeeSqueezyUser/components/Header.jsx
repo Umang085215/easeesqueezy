@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import StickyHeader from "../components/StickyHeader";
+import logo from "../../assets/logo/new_logo.png";
 
 const Header = () => {
   const navigate = useNavigate();
@@ -24,7 +25,7 @@ const Header = () => {
           onClick={() => navigate("/")}
         >
           <img
-            src="/images/logo/new_logo.png"
+            src={logo}
             alt="Easee Squeezy"
             loading="lazy"
             className="w-24 max-w-full h-[60px]"

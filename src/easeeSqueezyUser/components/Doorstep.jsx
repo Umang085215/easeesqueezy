@@ -1,4 +1,10 @@
 import React from "react";
+import juice1 from "../../assets/juices/juice1.png";
+import juice2 from "../../assets/juices/juice2.png";
+import juice3 from "../../assets/juices/juice3.png";
+import juice4 from "../../assets/juices/juice4.png";
+import juice5 from "../../assets/juices/juice5.png";
+import juice6 from "../../assets/juices/juice6.png";
 
 const Doorstep = () => {
   return (
@@ -11,7 +17,7 @@ const Doorstep = () => {
                 <li>
                   <div className="flex items-center">
                     <img
-                      src="/images/juices/juice1.png"
+                      src={juice1}
                       alt="Experience"
                       loading="lazy"
                       className="w-\[65px\] h-[70px] -mt-4 -mb-4"
@@ -24,7 +30,7 @@ const Doorstep = () => {
                 <li>
                   <div className="flex items-center">
                     <img
-                      src="/images/juices/juice3.png"
+                      src={juice2}
                       alt="Outlets"
                       loading="lazy"
                       className="w-\[65px\] h-[70px] -mt-4 -mb-4"
@@ -37,7 +43,7 @@ const Doorstep = () => {
                 <li>
                   <div className="flex items-center">
                     <img
-                      src="/images/juices/juice4.png"
+                      src={juice3}
                       alt="Products"
                       loading="lazy"
                       className="w-\[65px\] h-[70px] -mt-4 -mb-4"
@@ -50,7 +56,7 @@ const Doorstep = () => {
                 <li>
                   <div className="flex items-center">
                     <img
-                      src="/images/juices/juice5.png"
+                      src={juice4}
                       alt="Cities"
                       loading="lazy"
                       className="w-[65px] h-[70px] -mt-4 -mb-4"
@@ -63,7 +69,7 @@ const Doorstep = () => {
                 <li>
                   <div className="flex items-center">
                     <img
-                      src="/images/juices/juice6.png"
+                      src={juice5}
                       alt="Cities"
                       loading="lazy"
                       className="w-\[65px\] h-[70px] -mt-4 -mb-4"
@@ -76,7 +82,7 @@ const Doorstep = () => {
                 <li>
                   <div className="flex items-center">
                     <img
-                      src="/images/juices/juice1.png"
+                      src={juice6}
                       alt="Products"
                       loading="lazy"
                       className="w-\[65px\] h-[70px] -mt-4 -mb-4"
@@ -89,7 +95,7 @@ const Doorstep = () => {
                 <li>
                   <div className="flex items-center">
                     <img
-                      src="/images/juices/juice3.png"
+                      src={juice1}
                       alt="Products"
                       loading="lazy"
                       className="w-\[65px\] h-[70px] -mt-4 -mb-4"
@@ -102,7 +108,7 @@ const Doorstep = () => {
                 <li>
                   <div className="flex items-center">
                     <img
-                      src="/images/juices/juice2.png"
+                      src={juice2}
                       alt="Products"
                       loading="lazy"
                       className="w-\[65px\] h-[70px] -mt-4 -mb-4"
