@@ -5,12 +5,12 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/effect-coverflow";
 import TestimonialCard from "./TestimonialCard";
-import testimonial from "../../data/products/Testimonial.json";
+import testimonials from "../../data/products/Testimonials.json";
 
 const Testimonial = () => {
   const [testimonialData, setTestimonialData] = useState([]);
   useEffect(() => {
-    setTestimonialData(testimonial);
+    setTestimonialData(testimonials);
   }, []);
   console.log(testimonialData);
   return (
