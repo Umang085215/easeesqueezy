@@ -41,7 +41,7 @@ const NotFound = () => {
           404
         </h1>
         <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold">
-          Oops!! Page Not Found
+          Oops! Page Not Found
         </h2>
         <p className="text-gray-200 max-w-md mx-auto md:mx-0">
           Looks like you drank too much juice 🍹 and ended up on the wrong page.
