@@ -10,7 +10,7 @@ const DoorCard = ({ juice }) => {
         className="w-\[65px\] h-[70px] -mt-4 -mb-4"
       />
       <span className="text-white text-2xl font-extrabold   ">
-        {juice.title}
+        {juice.text}
       </span>
     </div>
   );
