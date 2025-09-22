@@ -60,7 +60,8 @@ const Navbar = ({ toggleSidebar }) => {
                     setMenuOpen(false);
                   }}
                 >
-                  <UserRound size={20} /> Profile
+                  <UserRound size={20} />
+                  My Profile
                 </div>
               </li>
               <li>
