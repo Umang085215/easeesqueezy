@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import ScrollToTop from "../utility/ScrollToTop";
 import PreLoader from "../easeeSqueezyUser/components/loaders/PreLoader";
 import NotFound from "../easeeSqueezyUser/pages/NotFound";
+import Profile from "../easeeSqueezyAdmin/pages/Profile";
 const Layout = lazy(() => import("../easeeSqueezyUser/layouts/Layout"));
 const Home = lazy(() => import("../easeeSqueezyUser/pages/Home"));
 const About = lazy(() => import("../easeeSqueezyUser/pages/About"));
@@ -60,6 +61,7 @@ const Routers = () => {
         >
           <Route index element={<Dashboard />} />
           <Route path="dashboard" element={<Dashboard />} />
+          <Route path="profile" element={<Profile />} />
           <Route path="products" element={<Products />} />
           <Route path="manufacture" element={<Manufacture />} />
           <Route path="categories" element={<Categories />} />

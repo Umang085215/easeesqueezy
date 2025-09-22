@@ -1,17 +1,47 @@
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import {
   LayoutDashboard,
   Package,
   ChevronDown,
   ChevronRight,
   X,
+  LogOut,
 } from "lucide-react";
 import { useState } from "react";
 import logo from "../../assets/adminImages/logo/new_logo.png";
 
 const Sidebar = ({ isOpen, setIsOpen, toggleSidebar }) => {
+  const navigate = useNavigate();
   const location = useLocation();
   const [catalogOpen, setCatalogOpen] = useState(false);
+
+  const handleLogout = async () => {
+    try {
+      const token = localStorage.getItem("adminToken");
+      if (!token) {
+        console.warn("No token found, user already logged out.");
+        return;
+      }
+      const response = await fetch(
+        "https://devshub.easeesqueezy.com/easeesqueezy_backend/public/api/admin/logout",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+      if (response.ok) {
+        localStorage.removeItem("adminToken");
+        navigate("/admin/login");
+      } else {
+        console.error("Logout failed:", await response.json());
+      }
+    } catch (err) {
+      console.error("Logout error:", err);
+    }
+  };
 
   return (
     <aside
@@ -57,7 +87,6 @@ const Sidebar = ({ isOpen, setIsOpen, toggleSidebar }) => {
             {isOpen && <span className="ml-3">Dashboard</span>}
           </span>
         </Link>
-
         {/* Catalog Menu */}
         <div>
           <button
@@ -127,6 +156,15 @@ const Sidebar = ({ isOpen, setIsOpen, toggleSidebar }) => {
               </Link>
             </div>
           )}
+        </div>
+        <div
+          className="flex items-center  px-3 py-3  hover:bg-red-200 cursor-pointer  transition-colors duration-200 border-b border-gray-300 text-danger font-bold"
+          onClick={handleLogout}
+        >
+          <span className="flex items-center text-md font-extrabold">
+            <LogOut size={20} />
+            {isOpen && <span className="ml-3">Logout</span>}
+          </span>
         </div>
       </nav>
     </aside>

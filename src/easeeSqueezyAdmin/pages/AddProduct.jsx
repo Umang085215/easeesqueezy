@@ -222,25 +222,25 @@ const AddProduct = () => {
             )}
 
             <div>
-              <label className="block font-medium">
+              <label className="block font-medium  mt-3">
                 Description <span className="text-red-500">*</span>
               </label>
-              <div
-                className={`rounded border ${
+
+              <textarea
+                type="text"
+                name="product_description"
+                value={formData.product_description}
+                onChange={handleChange}
+                rows={1}
+                className={`border w-full p-2 rounded  focus:outline-none ${
                   errors.product_description
                     ? "border-red-500"
                     : "border-gray-300"
                 }`}
-              >
-                <input
-                  type="text"
-                  name="product_description"
-                  value={formData.product_description}
-                  onChange={handleChange}
-                />
-              </div>
+              />
+
               {errors.product_description && (
-                <p className="text-red-500 text-sm mt-1">
+                <p className="text-red-500 text-sm ">
                   {errors.product_description}
                 </p>
               )}
