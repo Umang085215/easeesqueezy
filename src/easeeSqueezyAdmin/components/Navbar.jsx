@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Menu } from "lucide-react";
-import { RxLapTimer } from "react-icons/rx";
 import { IoMdNotificationsOff } from "react-icons/io";
 import { FcAdvertising } from "react-icons/fc";
 

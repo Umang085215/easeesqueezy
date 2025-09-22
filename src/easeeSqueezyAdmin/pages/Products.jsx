@@ -146,11 +146,14 @@ const Products = () => {
     <>
       <PageHeader
         title="Products"
-        breadcrumb={[{ label: "Home", link: "#" }, { label: "Products" }]}
+        breadcrumb={[
+          { label: "Home", link: "/admin/dashboard" },
+          { label: "Products" },
+        ]}
       />
 
       <div className="flex gap-4 flex-col lg:flex-row border">
-        <div className="flex-1 w-full bg-white p-4 shadow rounded">
+        <div className="flex-1 w-full bg-white p-4 sm:p-8 shadow rounded">
           <div className="flex items-center gap-1 text-lg font-semibold border-b pb-2 mb-4 text-[#003b19]">
             <Logs size={18} />
             <h2>Product List</h2>

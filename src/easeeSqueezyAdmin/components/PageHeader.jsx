@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const PageHeader = ({ title, breadcrumb }) => {
   return (
-    <div className="flex flex-col md:flex-row md:items-center justify-between bg-white p-4 shadow rounded mb-4">
+    <div className="flex flex-row md:items-center justify-between bg-white px-4 py-4 sm:px-8 shadow rounded mb-4">
       {/* Left - Title & Breadcrumb */}
       <div>
         <h1 className="text-2xl font-bold text-[#003b19]">{title}</h1>

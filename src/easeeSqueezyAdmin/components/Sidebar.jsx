@@ -7,8 +7,9 @@ import {
   X,
 } from "lucide-react";
 import { useState } from "react";
+import logo from "../../assets/adminImages/logo/new_logo.png";
 
-const Sidebar = ({ isOpen, toggleSidebar }) => {
+const Sidebar = ({ isOpen, setIsOpen, toggleSidebar }) => {
   const location = useLocation();
   const [catalogOpen, setCatalogOpen] = useState(false);
 
@@ -24,19 +25,11 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
       <div className="flex items-center justify-between p-2 border-b border-gray-500 min-h-[64px]">
         {isOpen ? (
           <span className="w-full flex items-center justify-center ">
-            <img
-              src="/adminImages/new_logo.webp"
-              alt="sidebar logo"
-              className="w-36 h-12 m-0"
-            />
+            <img src={logo} alt="sidebar logo" className="w-36 h-12 m-0" />
           </span>
         ) : (
           <div className="w-24">
-            <img
-              src="/images/new_logo.webp"
-              alt="sidebar logo"
-              className="w-full m-0"
-            />
+            <img src={logo} alt="sidebar logo" className="w-full m-0" />
           </div>
         )}
         <button
@@ -48,7 +41,7 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
       </div>
 
       {/* Navigation Links */}
-      <nav className=" flex flex-col ">
+      <nav className=" flex flex-col">
         <Link
           to="/admin/dashboard"
           className={`flex items-center  px-3 py-3  hover:bg-gray-100 hover:text-gray-500 transition-colors duration-200 border-b border-gray-300
@@ -86,7 +79,7 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
           </button>
 
           {catalogOpen && isOpen && (
-            <div className="flex flex-col  ">
+            <div className="flex flex-col">
               <Link
                 to="/admin/products"
                 className={`px-2 py-3 text-sm hover:bg-gray-100 hover:text-gray-500 transition-colors duration-200 border-b border-gray-200

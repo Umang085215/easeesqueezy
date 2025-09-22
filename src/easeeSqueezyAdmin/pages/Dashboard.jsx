@@ -1,6 +1,10 @@
 import React from "react";
 import { ShoppingCart, CreditCard, User, Users } from "lucide-react";
 import DashboardCard from "../components/DashboardCard";
+import img1 from "../../assets/adminImages/d1.png";
+import img2 from "../../assets/adminImages/d2.png";
+import img3 from "../../assets/adminImages/d3.png";
+import img4 from "../../assets/adminImages/d4.png";
 
 const Dashboard = () => {
   const products = [
@@ -8,28 +12,28 @@ const Dashboard = () => {
       id: 1,
       name: "Apple Juice",
       category: "Juice",
-      price: "$999",
+      price: "999",
       stock: 25,
     },
     {
       id: 2,
       name: "Lemon Juice",
       category: "Juice",
-      price: "$150",
+      price: "150",
       stock: 50,
     },
     {
       id: 3,
       name: "Banana shake",
       category: "Shake",
-      price: "$899",
+      price: "899",
       stock: 30,
     },
     {
       id: 4,
       name: "Grapes juice",
       category: "Juice",
-      price: "$499",
+      price: "499",
       stock: 10,
     },
   ];
@@ -42,33 +46,33 @@ const Dashboard = () => {
           title="Total Orders"
           value="2.5K"
           ratio="10% Increase"
-          img="d1.webp"
+          img={img1}
           color="green"
         />
         <DashboardCard
           title="Total Sales"
           value="5.2k"
           ratio="5% Increase"
-          img="d2.webp"
+          img={img2}
           color="green"
         />
         <DashboardCard
           title="Customers"
           value="25k"
           ratio="2% Decrese"
-          img="d4.webp"
+          img={img3}
           color="red"
         />
         <DashboardCard
           title="People Online"
           value="8"
-          img="d3.webp"
+          img={img4}
           color="green"
         />
       </div>
 
       {/* Product Details Table */}
-      <div className="bg-white shadow rounded p-4 overflow-x-auto">
+      <div className="bg-white shadow rounded p-4 sm:p-8 overflow-x-auto">
         <h2 className="text-xl font-bold mb-4 text-[#003b19]">
           Product Details
         </h2>

@@ -6,7 +6,7 @@ import { useQuill } from "react-quilljs";
 import "quill/dist/quill.snow.css";
 import { Summernote } from "@easylogic/react-summernote";
 import "summernote/dist/summernote-lite.css";
-import { Check, Save, X } from "lucide-react";
+import { Save, X, Loader } from "lucide-react";
 
 const productSchema = yup.object().shape({
   product_name: yup.string().required("Product Name is required"),
@@ -93,6 +93,25 @@ const AddProduct = () => {
     }
   };
 
+  const handleResetForm = () => {
+    setFormData({
+      product_name: "",
+      product_description: "",
+      meta_title: "",
+      meta_description: "",
+      meta_keyword: "",
+      model: "",
+      sku: "",
+      category_id: "",
+      manufacturer_id: "",
+      price: "",
+      special_price: "",
+      quantity: "",
+      status: "",
+      image: null,
+    });
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -120,22 +139,7 @@ const AddProduct = () => {
       const result = await response.json();
       if (response.ok) {
         console.log("API Response:", result);
-        setFormData({
-          product_name: "",
-          product_description: "",
-          meta_title: "",
-          meta_description: "",
-          meta_keyword: "",
-          model: "",
-          sku: "",
-          category_id: "",
-          manufacturer_id: "",
-          price: "",
-          special_price: "",
-          quantity: "",
-          status: "",
-          image: null,
-        });
+        handleResetForm();
         setLoading(true);
         navigate("/admin/products");
         // if (quill) quill.setContents([]);
@@ -157,22 +161,7 @@ const AddProduct = () => {
 
   const handleCancel = (e) => {
     e.preventDefault();
-    setFormData({
-      product_name: "",
-      product_description: "",
-      meta_title: "",
-      meta_description: "",
-      meta_keyword: "",
-      model: "",
-      sku: "",
-      category_id: "",
-      manufacturer_id: "",
-      price: "",
-      special_price: "",
-      quantity: "",
-      status: "",
-      image: null,
-    });
+    handleResetForm();
     setErrors({});
   };
 
@@ -197,10 +186,10 @@ const AddProduct = () => {
   };
 
   return (
-    <div className="p-6 bg-white shadow rounded">
-      <div className="flex justify-between items-center">
-        <h1 className="text-2xl font-bold mb-4">Add Product</h1>
-        <div className="mt-6 flex  gap-2">
+    <div className="p-4 sm:p-8 bg-white shadow rounded">
+      <div className="flex flex-col sm:flex-row justify-between items-center mb-6 sm:mb-0 ">
+        <h1 className="text-2xl font-bold mb-1 sm:mb-4">Add Product</h1>
+        <div className="mt-2 sm:mt-6 flex  gap-2">
           <button
             type="button"
             onClick={handleCancel}
@@ -216,7 +205,7 @@ const AddProduct = () => {
               loading ? "bg-gray-400 cursor-not-allowed" : "bg-[#003b19]"
             }`}
           >
-            {loading ? "Saving .." : <Save size={16} />}
+            {loading ? <Loader size={16} /> : <Save size={16} />}
           </button>
           <button
             onClick={() => navigate("/admin/products")}
@@ -242,7 +231,7 @@ const AddProduct = () => {
           </Tabs.List>
 
           {/* General Tab */}
-          <Tabs.Content value="general" className="p-4">
+          <Tabs.Content value="general" className="py-4">
             <label className="block font-medium">
               Product Name <strong className="text-red-500">*</strong>
             </label>
@@ -333,7 +322,7 @@ const AddProduct = () => {
             )}
           </Tabs.Content>
 
-          <Tabs.Content value="data" className="p-4">
+          <Tabs.Content value="data" className="py-4">
             <label className="block font-medium mt-3">
               Model<strong className="text-red-500">*</strong>
             </label>
@@ -375,11 +364,12 @@ const AddProduct = () => {
               }`}
             >
               <option value=""> --Select Category--</option>
-              {categories.map((category) => (
-                <option key={category.id} value={category.id}>
-                  {category.name}
-                </option>
-              ))}
+              {categories.length > 0 &&
+                categories.map((category) => (
+                  <option key={category.id} value={category.id}>
+                    {category.name}
+                  </option>
+                ))}
             </select>
             {errors.category_id && (
               <p className="text-red-500 text-sm">{errors.category_id}</p>
@@ -466,7 +456,7 @@ const AddProduct = () => {
               <p className="text-red-500 text-sm">{errors.status}</p>
             )}
           </Tabs.Content>
-          <Tabs.Content value="image" className="p-4">
+          <Tabs.Content value="image" className="py-4">
             <label className="block font-medium">
               Image <strong className="text-red-500">*</strong>
             </label>
@@ -483,26 +473,6 @@ const AddProduct = () => {
             )}
           </Tabs.Content>
         </Tabs.Root>
-
-        {/* Buttons */}
-        {/* <div className="mt-6 flex justify-end gap-4">
-          <button
-            type="button"
-            onClick={() => setFormData({})}
-            className="bg-gray-400 text-white px-4 py-2 rounded"
-          >
-            Cancel
-          </button>
-          <button
-            type="submit"
-            disabled={loading}
-            className={`bg-[#003b19] text-white px-6 py-2 rounded ${
-              loading ? "bg-gray-400 cursor-not-allowed" : "bg-[#003b19]"
-            }`}
-          >
-            {loading ? "Saving .." : "Save"}
-          </button>
-        </div> */}
       </form>
     </div>
   );

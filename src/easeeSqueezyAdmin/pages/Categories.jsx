@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import * as yup from "yup";
 import * as Tabs from "@radix-ui/react-tabs";
-import { Save, X } from "lucide-react";
+import { Save, X, Loader } from "lucide-react";
 const schema = yup.object().shape({
   category: yup.string().required("Category is required"),
 });
@@ -47,6 +47,9 @@ const Categories = () => {
       const data = await res.json();
       if (res.ok && data.status === "Category created successfully") {
         setSuccessMsg("Category added successfully!");
+        setTimeout(() => {
+          setSuccessMsg("");
+        }, 5000);
         setCategory("");
       } else {
         setErrorMsg(
@@ -79,10 +82,10 @@ const Categories = () => {
   };
 
   return (
-    <div className="p-6 bg-white shadow rounded">
-      <div className="flex justify-between items-center">
-        <h1 className="text-2xl font-bold mb-4">Add Category</h1>
-        <div className="mt-6 flex  gap-2">
+    <div className="p-4 sm:p-8 bg-white shadow rounded">
+      <div className="flex flex-col sm:flex-row justify-between items-center mb-6 sm:mb-0">
+        <h1 className="text-2xl font-bold mb-1 sm:mb-4">Add Category</h1>
+        <div className="mt-2 sm:mt-6 flex  gap-2">
           <button
             type="button"
             onClick={handleCancel}
@@ -98,7 +101,7 @@ const Categories = () => {
               loading ? "bg-gray-400 cursor-not-allowed" : "bg-[#003b19]"
             }`}
           >
-            {loading ? "Saving .." : <Save size={16} />}
+            {loading ? <Loader size={16} /> : <Save size={16} />}
           </button>
           <button
             onClick={() => navigate("/admin/products")}
@@ -109,7 +112,7 @@ const Categories = () => {
         </div>
       </div>
 
-      <div className="bg-white rounded-lg p-8 w-full">
+      <div className="bg-white rounded-lg  w-full">
         <form id="categoryForm" onSubmit={handleSubmit} className="space-y-4">
           <Tabs.Root defaultValue="general">
             <Tabs.List className="flex border-b overflow-x-auto">
@@ -121,7 +124,7 @@ const Categories = () => {
               </Tabs.Trigger>
             </Tabs.List>
 
-            <Tabs.Content value="general" className="p-4">
+            <Tabs.Content value="general" className="py-4">
               {errorMsg && (
                 <div className="mb-4 p-3 rounded-lg bg-red-100 text-red-700 border border-red-300 text-sm text-center">
                   {errorMsg}

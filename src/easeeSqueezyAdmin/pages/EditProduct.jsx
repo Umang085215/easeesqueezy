@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
 import * as Tabs from "@radix-ui/react-tabs";
 import { useParams, useNavigate } from "react-router-dom";
+import { Save, X, Loader } from "lucide-react";
 
 const EditProduct = () => {
   const { id } = useParams();
   const navigate = useNavigate();
+  const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     description: "",
@@ -18,12 +20,9 @@ const EditProduct = () => {
     mainImage: null,
     subImages: [],
   });
-
-  // ✅ Prefill data from localStorage
   useEffect(() => {
     const storedProducts = JSON.parse(localStorage.getItem("products")) || [];
     const product = storedProducts.find((p) => String(p.id) === id);
-
     if (product) {
       setFormData({
         ...product,
@@ -48,30 +47,61 @@ const EditProduct = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    // ✅ update localStorage
     const storedProducts = JSON.parse(localStorage.getItem("products")) || [];
     const updated = storedProducts.map((p) =>
       String(p.id) === id ? { ...formData } : p
     );
     localStorage.setItem("products", JSON.stringify(updated));
+    navigate("/admin/products");
+  };
 
-    alert("✅ Product updated successfully!");
-    navigate("/admin/products"); // redirect back
+  const handleCancel = () => {
+    setFormData({
+      name: "",
+      description: "",
+      metaTitle: "",
+      metaDescription: "",
+      metaKeywords: "",
+      price: "",
+      specialPrice: "",
+      quantity: "",
+      status: "",
+      mainImage: null,
+      subImages: [],
+    });
   };
 
   return (
-    <div className="p-6 bg-white shadow rounded">
-      <div className="flex justify-between items-center">
-        <h1 className="text-2xl font-bold mb-4">Edit Product</h1>
-        <button
-          onClick={() => navigate("/admin/products")}
-          className="bg-[#003b19] text-white px-4 py-2 rounded"
-        >
-          All Products
-        </button>
+    <div className="p-4 sm:p-8 bg-white shadow rounded">
+      <div className="flex flex-col sm:flex-row justify-between items-center mb-6 sm:mb-0">
+        <h1 className="text-2xl font-bold mb-1 sm:mb-4">Edit Product</h1>
+        <div className="mt-2 sm:mt-6 flex  gap-2">
+          <button
+            type="button"
+            onClick={handleCancel}
+            className="bg-gray-400 text-white px-2 py-1 rounded"
+          >
+            <X size={16} />
+          </button>
+          <button
+            type="submit"
+            disabled={loading}
+            form="editProductForm"
+            className={`bg-blue-600 hover:bg-blue-700 text-white px-2 py-1 rounded ${
+              loading ? "bg-gray-400 cursor-not-allowed" : "bg-[#003b19]"
+            }`}
+          >
+            {loading ? <Loader size={16} /> : <Save size={16} />}
+          </button>
+          <button
+            onClick={() => navigate("/admin/products")}
+            className="bg-[#003b19] text-white px-2 py-1 rounded"
+          >
+            All Products
+          </button>
+        </div>
       </div>
-      <form onSubmit={handleSubmit}>
+      <form id="editProductForm" onSubmit={handleSubmit}>
         <Tabs.Root defaultValue="general">
           {/* Tabs */}
           <Tabs.List className="flex border-b overflow-x-auto">
@@ -87,7 +117,7 @@ const EditProduct = () => {
           </Tabs.List>
 
           {/* General Tab */}
-          <Tabs.Content value="general" className="p-4">
+          <Tabs.Content value="general" className="py-4">
             <label className="block font-medium">Product Name</label>
             <input
               type="text"
@@ -136,7 +166,7 @@ const EditProduct = () => {
           </Tabs.Content>
 
           {/* Data Tab */}
-          <Tabs.Content value="data" className="p-4">
+          <Tabs.Content value="data" className="py-4">
             <label className="block font-medium">Main Price</label>
             <input
               type="number"
@@ -161,7 +191,7 @@ const EditProduct = () => {
               onChange={handleChange}
               className="border w-full p-2 rounded mb-1"
             />
-            \<label className="block font-medium mt-3">Status</label>
+            <label className="block font-medium mt-3">Status</label>
             <select
               name="status"
               value={formData.status}
@@ -175,9 +205,14 @@ const EditProduct = () => {
           </Tabs.Content>
 
           {/* Image Tab */}
-          <Tabs.Content value="image" className="p-4">
+          <Tabs.Content value="image" className="py-4">
             <label className="block font-medium">Main Image</label>
-            <input type="file" name="mainImage" onChange={handleChange} />
+            <input
+              type="file"
+              name="mainImage"
+              onChange={handleChange}
+              className="border w-full p-2 rounded mb-1 focus:outline-none border-gray-300"
+            />
 
             {formData.mainImage && (
               <img
@@ -197,9 +232,10 @@ const EditProduct = () => {
               name="subImages"
               multiple
               onChange={handleChange}
+              className="border w-full p-2 rounded mb-1 focus:outline-none border-gray-300"
             />
 
-            <div className="flex gap-2 mt-3 flex-wrap">
+            <div className="flex gap-2 mt-3 flex-wrap ">
               {formData.subImages.map((file, i) => (
                 <img
                   key={i}
@@ -207,28 +243,12 @@ const EditProduct = () => {
                     typeof file === "string" ? file : URL.createObjectURL(file)
                   }
                   alt={`sub-${i}`}
-                  className="w-20 h-20 object-cover rounded"
+                  className="w-20 h-20 object-cover rounded "
                 />
               ))}
             </div>
           </Tabs.Content>
         </Tabs.Root>
-
-        <div className="mt-6 flex justify-end gap-4">
-          <button
-            type="button"
-            onClick={() => navigate("/products")}
-            className="bg-gray-400 text-white px-4 py-2 rounded"
-          >
-            Cancel
-          </button>
-          <button
-            type="submit"
-            className="bg-[#003b19] text-white px-6 py-2 rounded"
-          >
-            Update
-          </button>
-        </div>
       </form>
     </div>
   );

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import * as yup from "yup";
 import * as Tabs from "@radix-ui/react-tabs";
-import { Save, X } from "lucide-react";
+import { Save, X, Loader } from "lucide-react";
 const schema = yup.object().shape({
   manufacturer_id: yup.string().required("Manufacturer Id is required"),
 });
@@ -47,11 +47,17 @@ const Manufacture = () => {
       const data = await res.json();
       if (res.ok && data.status === "Manufacturer Id created successfully") {
         setSuccessMsg("Manufacturer Id added successfully!");
+        setTimeout(() => {
+          setSuccessMsg("");
+        }, 5000);
         setManufacturer_id("");
       } else {
         setErrorMsg(
           data.message || "Failed to add manufacturer_id. Please try again."
         );
+        setTimeout(() => {
+          setErrorMsg("");
+        }, 5000);
       }
     } catch (err) {
       if (err.name === "ValidationError") {
@@ -79,10 +85,10 @@ const Manufacture = () => {
   };
 
   return (
-    <div className="p-6 bg-white shadow rounded">
-      <div className="flex justify-between items-center">
-        <h1 className="text-2xl font-bold mb-4">Add Manufacturer</h1>
-        <div className="mt-6 flex  gap-2">
+    <div className="p-4 sm:p-8 bg-white shadow rounded">
+      <div className="flex flex-col sm:flex-row justify-between items-center mb-6 sm:mb-0">
+        <h1 className="text-2xl font-bold mb-1 sm:mb-4">Add Manufacturer</h1>
+        <div className="mt-2 sm:mt-6 flex  gap-2">
           <button
             type="button"
             onClick={handleCancel}
@@ -98,7 +104,7 @@ const Manufacture = () => {
               loading ? "bg-gray-400 cursor-not-allowed" : "bg-[#003b19]"
             }`}
           >
-            {loading ? "Saving .." : <Save size={16} />}
+            {loading ? <Loader size={16} /> : <Save size={16} />}
           </button>
           <button
             onClick={() => navigate("/admin/products")}
@@ -109,7 +115,7 @@ const Manufacture = () => {
         </div>
       </div>
 
-      <div className="bg-white rounded-lg p-8 w-full">
+      <div className="bg-white rounded-lg  w-full">
         <form
           id="manufacturer_idForm"
           onSubmit={handleSubmit}
@@ -125,7 +131,7 @@ const Manufacture = () => {
               </Tabs.Trigger>
             </Tabs.List>
 
-            <Tabs.Content value="general" className="p-4">
+            <Tabs.Content value="general" className="py-4">
               {errorMsg && (
                 <div className="mb-4 p-3 rounded-lg bg-red-100 text-red-700 border border-red-300 text-sm text-center">
                   {errorMsg}

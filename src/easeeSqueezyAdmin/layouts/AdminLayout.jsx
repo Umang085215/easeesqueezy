@@ -8,9 +8,10 @@ const AdminLayout = () => {
   const [sidebarOpen, setSidebarOpen] = useState(true);
 
   return (
-    <div className="flex h-screen  bg-gray-100">
+    <div className=" min-h-screen bg-gray-100">
       <Sidebar
         isOpen={sidebarOpen}
+        setIsOpen={setSidebarOpen}
         toggleSidebar={() => setSidebarOpen(!sidebarOpen)}
       />
 
@@ -20,7 +21,7 @@ const AdminLayout = () => {
         }`}
       >
         <Navbar toggleSidebar={() => setSidebarOpen(!sidebarOpen)} />
-        <main className="flex-1 p-5 overflow-auto">
+        <main className="flex-1 px-3 py-6 overflow-auto">
           <Outlet />
         </main>
       </div>
