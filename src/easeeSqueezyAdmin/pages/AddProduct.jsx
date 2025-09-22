@@ -2,10 +2,6 @@ import React, { useState, useEffect } from "react";
 import * as Tabs from "@radix-ui/react-tabs";
 import * as yup from "yup";
 import { useNavigate } from "react-router-dom";
-import { useQuill } from "react-quilljs";
-import "quill/dist/quill.snow.css";
-import { Summernote } from "@easylogic/react-summernote";
-import "summernote/dist/summernote-lite.css";
 import { Save, X, Loader } from "lucide-react";
 
 const productSchema = yup.object().shape({
@@ -53,28 +49,6 @@ const AddProduct = () => {
   const [errors, setErrors] = useState({});
   const [categories, setCategories] = useState([]);
   const navigate = useNavigate();
-  const { quill, quillRef } = useQuill({
-    theme: "snow",
-    modules: {
-      toolbar: [
-        [{ header: [1, 2, 3, false] }],
-        ["bold", "italic", "underline", "strike"],
-        [{ list: "ordered" }, { list: "bullet" }],
-        ["link"],
-        ["clean"],
-      ],
-    },
-  });
-
-  useEffect(() => {
-    if (quill) {
-      quill.on("text-change", () => {
-        const html = quill.root.innerHTML;
-        setFormData((prev) => ({ ...prev, product_description: html }));
-        setErrors((prev) => ({ ...prev, product_description: undefined }));
-      });
-    }
-  }, [quill]);
 
   useEffect(() => {
     getCategories();
@@ -142,7 +116,6 @@ const AddProduct = () => {
         handleResetForm();
         setLoading(true);
         navigate("/admin/products");
-        // if (quill) quill.setContents([]);
       } else {
         alert(result.message || "Failed to add product.");
       }
