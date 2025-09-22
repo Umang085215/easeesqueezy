@@ -35,14 +35,14 @@ const App = () => {
 
   return (
     <div className="App">
-      {/* {loading ? (
+      {loading ? (
         <PreLoader />
       ) : (
         <Suspense fallback={<PreLoader />}>
           <Routers />
         </Suspense>
-      )} */}
-      <Routers />
+      )}
+      {/* <Routers /> */}
     </div>
   );
 };
