@@ -13,7 +13,7 @@ import logo from "../../assets/adminImages/logo/new_logo.png";
 const Sidebar = ({ isOpen, setIsOpen, toggleSidebar }) => {
   const navigate = useNavigate();
   const location = useLocation();
-  const [catalogOpen, setCatalogOpen] = useState(false);
+  const [catalogOpen, setCatalogOpen] = useState(true);
 
   const handleLogout = async () => {
     try {
@@ -76,7 +76,7 @@ const Sidebar = ({ isOpen, setIsOpen, toggleSidebar }) => {
           to="/admin/dashboard"
           className={`flex items-center  px-3 py-3  hover:bg-gray-100 hover:text-gray-500 transition-colors duration-200 border-b border-gray-300
             ${
-              location.pathname === "/admin/dashboard"
+              ["/admin/dashboard", "/admin"].includes(location.pathname)
                 ? "bg-blue-100 text-[#3f55f5]"
                 : ""
             }

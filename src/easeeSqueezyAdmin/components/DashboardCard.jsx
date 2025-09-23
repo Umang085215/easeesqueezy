@@ -1,7 +1,7 @@
 const DashboardCard = ({ title, value, ratio, img, color }) => {
   return (
     <div
-      className={`flex items-center justify-between gap-2 p-5 rounded-md sm:rounded-lg shadow-md bg-white hover:shadow-lg transition duration-500  hover:scale-105`}
+      className={`flex items-center justify-between gap-2 p-5 rounded-md sm:rounded-lg shadow-md bg-white hover:shadow-lg transition duration-500`}
     >
       <div className="flex flex-col justify-between h-40 ">
         <div>
