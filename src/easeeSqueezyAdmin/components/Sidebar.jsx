@@ -10,7 +10,7 @@ import {
 import { useState } from "react";
 import logo from "../../assets/adminImages/logo/new_logo.png";
 
-const Sidebar = ({ isOpen, setIsOpen, toggleSidebar }) => {
+const Sidebar = ({ isOpen, toggleSidebar }) => {
   const navigate = useNavigate();
   const location = useLocation();
   const [catalogOpen, setCatalogOpen] = useState(true);
